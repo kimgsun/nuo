@@ -5,6 +5,7 @@
   border-top: 1px solid $color-border;
   text-align: center;
   background: rgba($color-main, 0.02);
+  animation: productHeroFadeIn 1s ease-out;
   @include t { padding: $sp-4xl 0 $sp-2xl; }
 
   &::before {
@@ -21,6 +22,7 @@
   .label {
     margin-bottom: $sp-lg;
     color: rgba($color-main, 0.5);
+    animation: productHeroContentSlide 0.8s ease-out 0.2s backwards;
     @include t { margin-bottom: $sp-md; }
   }
 
@@ -28,6 +30,7 @@
     margin-bottom: $sp-xl;
     line-height: 1.2;
     color: $color-main;
+    animation: productHeroContentSlide 0.8s ease-out 0.3s backwards;
     @include t { margin-bottom: $sp-lg; }
   }
 
@@ -37,6 +40,7 @@
     font-size: $fs-lg;
     line-height: 1.85;
     color: rgba($color-main, 0.7);
+    animation: productHeroContentSlide 0.8s ease-out 0.4s backwards;
     @include t { 
       padding: 0 $sp-lg;
       font-size: $fs-base; 
@@ -240,5 +244,25 @@
       line-height: 1.6;
       color: rgba($color-main, 0.5);
     }
+  }
+}
+
+@keyframes productHeroFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes productHeroContentSlide {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

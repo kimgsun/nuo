@@ -8,7 +8,9 @@
   <title>Product | nuo</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
   <link rel="stylesheet" href="css/main.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="js/common.js" defer></script>
+  <script src="js/utils/scroll-animation.js"></script>
   <script type="module" src="js/pages/product.js"></script>
 </head>
 <body>
@@ -41,7 +43,7 @@
           <button class="product__filter-btn" data-category="commercial" aria-pressed="false">상업 공간</button>
           <button class="product__filter-btn" data-category="spatial" aria-pressed="false">공간 디자인</button>
         </div>
-        <div class="product__grid" id="productGrid"></div>
+        <div class="product__grid" id="productGrid" data-scroll-animate="fade-up" data-scroll-delay="100"></div>
       </div>
     </section>
   </main>

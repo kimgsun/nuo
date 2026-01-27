@@ -49,6 +49,7 @@ function setupCategoryFilter(gridElement, allProjects) {
       this.classList.add('product__filter-btn--active');
       
       gridElement.style.opacity = '0';
+      gridElement.style.transform = 'translateY(20px)';
       
       setTimeout(() => {
         const filteredProjects = selectedCategory === 'all' 
@@ -60,7 +61,10 @@ function setupCategoryFilter(gridElement, allProjects) {
             );
         
         renderProjectGrid(filteredProjects, gridElement);
-        setTimeout(() => gridElement.style.opacity = '1', 10);
+        setTimeout(() => {
+          gridElement.style.opacity = '1';
+          gridElement.style.transform = 'translateY(0)';
+        }, 10);
       }, 300);
     });
   });
@@ -70,8 +74,14 @@ function setupCategoryFilter(gridElement, allProjects) {
   const projectGrid = document.getElementById('productGrid');
   if (!projectGrid) return;
   
-  projectGrid.style.transition = 'opacity 0.3s ease';
+  projectGrid.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
   const projectsData = await fetchProjectsData();
   renderProjectGrid(projectsData, projectGrid);
   setupCategoryFilter(projectGrid, projectsData);
+  
+  if (window.refreshScrollAnimations) {
+    setTimeout(() => {
+      window.refreshScrollAnimations();
+    }, 100);
+  }
 })();
