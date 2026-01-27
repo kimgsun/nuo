@@ -41,12 +41,12 @@
       flex-direction: column;
       gap: $sp-xs;
 
-      .label {
+      .common-label {
         font-weight: 700;
         color: rgba($color-main, 0.3);
       }
 
-      span:not(.label) {
+      span:not(.common-label) {
         font-size: $fs-sm;
         font-weight: 700;
         color: $color-main;
