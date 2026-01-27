@@ -4,7 +4,9 @@
   overflow: hidden;
   border-top: 1px solid $color-border;
   animation: faqHeroFadeIn 1s ease-out;
-  @include t { padding: $sp-3xl 0; }
+  @include t {
+    padding: $sp-3xl 0;
+  }
 
   &::before {
     @include bg-overlay(0.4);
@@ -21,7 +23,9 @@
     margin-bottom: $sp-lg;
     color: $color-main;
     animation: faqHeroTitleSlide 0.8s ease-out 0.2s backwards;
-    @include t { margin-bottom: $sp-md; }
+    @include t {
+      margin-bottom: $sp-md;
+    }
   }
 
   p {
@@ -30,7 +34,9 @@
     line-height: 1.8;
     color: rgba($color-main, 0.7);
     animation: faqHeroTextSlide 0.8s ease-out 0.4s backwards;
-    @include t { font-size: $fs-base; }
+    @include t {
+      font-size: $fs-base;
+    }
   }
 }
 
@@ -53,7 +59,9 @@
   &__item {
     border-bottom: 1px solid rgba($color-main, 0.08);
     transition: background $trans;
-    &:first-child { border-top: 1px solid rgba($color-main, 0.08); }
+    &:first-child {
+      border-top: 1px solid rgba($color-main, 0.08);
+    }
 
     &:hover {
       background: rgba($color-main, 0.02);
@@ -63,8 +71,12 @@
       background: rgba($color-main, 0.03);
     }
 
-    dt { margin: 0; }
-    dd { margin: 0; }
+    dt {
+      margin: 0;
+    }
+    dd {
+      margin: 0;
+    }
   }
 
   &__label {
@@ -88,16 +100,18 @@
     background: none;
     cursor: pointer;
     transition: color $trans;
-    @include t { 
+    @include t {
       padding: $sp-lg 0;
-      font-size: $fs-base; 
+      font-size: $fs-base;
     }
 
     span:not(.faq__label):not(.faq__icon) {
       flex: 1;
     }
 
-    &:hover { color: rgba($color-main, 0.6); }
+    &:hover {
+      color: rgba($color-main, 0.6);
+    }
   }
 
   &__icon {
@@ -131,22 +145,27 @@
     padding: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
-                opacity 0.4s ease 0.1s, 
-                padding 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition:
+      max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.4s ease 0.1s,
+      padding 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
     .faq__item--active & {
       max-height: 600px;
       padding: $sp-sm $sp-2xl $sp-xl $sp-2xl;
       opacity: 1;
-      @include t { padding: $sp-sm $sp-lg $sp-xl $sp-xl; }
+      @include t {
+        padding: $sp-sm $sp-lg $sp-xl $sp-xl;
+      }
     }
 
     p {
       font-size: $fs-base;
       line-height: 1.85;
       color: rgba($color-main, 0.8);
-      @include t { font-size: $fs-sm; }
+      @include t {
+        font-size: $fs-sm;
+      }
     }
   }
 }
@@ -163,10 +182,10 @@
     @include grid-bg-white(40px, 0.05);
   }
 
-  .container { 
+  .container {
     position: relative;
     z-index: 1;
-    max-width: 1000px; 
+    max-width: 1000px;
   }
 
   h2 {
@@ -180,9 +199,9 @@
     gap: $sp-3xl;
     padding-top: $sp-2xl;
     border-top: 1px solid rgba($white, 0.1);
-    @include t { 
-      grid-template-columns: 1fr; 
-      gap: $sp-lg; 
+    @include t {
+      grid-template-columns: 1fr;
+      gap: $sp-lg;
     }
 
     > div {
@@ -191,11 +210,6 @@
       align-items: flex-start;
       gap: $sp-xs;
 
-      .common-label {
-        font-weight: 700;
-        color: rgba($white, 0.3);
-      }
-
       span,
       a {
         font-size: $fs-sm;
@@ -203,11 +217,18 @@
         color: rgba($white, 0.8);
       }
 
+      .common-label {
+        font-weight: 700;
+        color: rgba($white, 0.3);
+      }
+
       a {
         text-decoration: underline;
         text-underline-offset: 4px;
         transition: color $trans;
-        &:hover { color: $white; }
+        &:hover {
+          color: $white;
+        }
       }
     }
   }

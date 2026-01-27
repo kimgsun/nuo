@@ -2096,15 +2096,15 @@ ul, ol {
   align-items: flex-start;
   gap: 0.25rem;
 }
-.faq-contact__info > div .common-label {
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.3);
-}
 .faq-contact__info > div span,
 .faq-contact__info > div a {
   font-size: 0.875rem;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.8);
+}
+.faq-contact__info > div .common-label {
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.3);
 }
 .faq-contact__info > div a {
   text-decoration: underline;
