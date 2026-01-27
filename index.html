@@ -14,21 +14,29 @@
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
     />
     <link rel="stylesheet" href="css/main.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/common.js" defer></script>
+    <script src="js/utils/scroll-animation.js"></script>
   </head>
   <body>
-  <header class="header">
-    <a href="index.html" class="header__logo" aria-label="nuo 홈으로 이동">nuo</a>
-    <button class="header__toggle" aria-label="메뉴 열기" aria-expanded="false"></button>
-    <nav class="header__nav" aria-label="주요 메뉴">
-      <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="product.html">Product</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header class="header">
+      <a href="index.html" class="header__logo" aria-label="nuo 홈으로 이동"
+        >nuo</a
+      >
+      <button
+        class="header__toggle"
+        aria-label="메뉴 열기"
+        aria-expanded="false"
+      ></button>
+      <nav class="header__nav" aria-label="주요 메뉴">
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
     <main>
       <section class="hero">
@@ -55,7 +63,7 @@
         <div class="hero__bg" aria-hidden="true">nuo</div>
       </section>
 
-      <section class="philosophy">
+      <section class="philosophy" data-scroll-animate="fade-up" data-scroll-delay="100">
         <div class="container">
           <header class="philosophy__header">
             <span class="common-label">Brand Philosophy</span>
@@ -135,13 +143,14 @@
             <div>
               <h2>Selected Archive</h2>
               <p>
-                형태의 기획부터 질감의 마무리까지, nuo가 완성한 공간의 기록입니다.
+                형태의 기획부터 질감의 마무리까지, nuo가 완성한 공간의
+                기록입니다.
               </p>
             </div>
             <a href="product.html" class="btn">Explore All Works</a>
           </header>
           <div class="gallery">
-            <article class="gallery__item">
+            <article class="gallery__item" data-scroll-animate="fade-up" data-scroll-delay="100">
               <a href="detail.html?project=shadow-studio">
                 <figure>
                   <img
@@ -162,7 +171,7 @@
                 </div>
               </a>
             </article>
-            <article class="gallery__item">
+            <article class="gallery__item" data-scroll-animate="fade-up" data-scroll-delay="300">
               <a href="detail.html?project=horizon-villa">
                 <figure>
                   <img
@@ -183,7 +192,7 @@
                 </div>
               </a>
             </article>
-            <article class="gallery__item">
+            <article class="gallery__item" data-scroll-animate="fade-up" data-scroll-delay="500">
               <a href="detail.html?project=monolith-office">
                 <figure>
                   <img
@@ -207,7 +216,7 @@
         </div>
       </section>
 
-      <section class="outro">
+      <section class="outro" data-scroll-animate="fade-up">
         <div class="outro__bg"></div>
         <div class="container">
           <h2>
