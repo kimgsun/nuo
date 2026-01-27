@@ -1105,7 +1105,7 @@ ul, ol {
   font-weight: 700;
   color: rgba(26, 26, 26, 0.15);
 }
-.about-standard__item-subtitle {
+.about-standard__subtitle {
   margin-bottom: 1rem;
   font-size: 0.875rem;
   font-weight: 500;
@@ -1480,48 +1480,48 @@ ul, ol {
     transform: scale(1.03);
     filter: grayscale(0%);
   }
-  .product__item:hover .product__item-meta-line {
+  .product__item:hover .product__meta-line {
     width: 50px;
     background: rgba(26, 26, 26, 0.6);
   }
   .product__item:hover h3 {
     color: #1a1a1a;
   }
-  .product__item:hover .product__item-summary {
+  .product__item:hover .product__summary {
     color: #1a1a1a;
   }
 }
-.product__item-content {
+.product__content {
   padding: 0 0.25rem;
   transition: transform 0.3s ease;
 }
-.product__item h3 {
+.product__content h3 {
   margin-bottom: 0.5rem;
   transition: color 0.3s ease;
 }
-.product__item-meta {
+.product__meta {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 1rem;
 }
-.product__item-meta p {
+.product__meta p {
   font-size: 0.75rem;
   color: rgba(26, 26, 26, 0.5);
   text-transform: uppercase;
 }
 @media (max-width: 767px) {
-  .product__item-meta p {
+  .product__meta p {
     font-size: 0.6rem;
   }
 }
-.product__item-meta-line {
+.product__meta-line {
   width: 30px;
   height: 1px;
   background: rgba(26, 26, 26, 0.2);
   transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s ease;
 }
-.product__item-summary {
+.product__summary {
   margin-bottom: 0.5rem;
   font-size: 1rem;
   line-height: 1.6;
@@ -1529,14 +1529,49 @@ ul, ol {
   transition: color 0.3s ease;
 }
 @media (max-width: 767px) {
-  .product__item-summary {
+  .product__summary {
     font-size: 0.875rem;
   }
 }
-.product__item-story {
+.product__story {
   font-size: 0.875rem;
   line-height: 1.6;
   color: rgba(26, 26, 26, 0.5);
+}
+.product__item {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.product__item:nth-child(3n+1) {
+  grid-column: 1/span 7;
+}
+.product__item:nth-child(3n+2) {
+  grid-column: 8/span 5;
+  margin-top: 200px;
+}
+@media (max-width: 1023px) {
+  .product__item:nth-child(3n+2) {
+    margin-top: 100px;
+  }
+}
+@media (max-width: 767px) {
+  .product__item:nth-child(3n+2) {
+    margin-top: 0;
+  }
+}
+.product__item:nth-child(3n) {
+  grid-column: 3/span 8;
+  margin-top: 50px;
+}
+@media (max-width: 767px) {
+  .product__item:nth-child(3n) {
+    margin-top: 0;
+  }
+}
+@media (max-width: 479px) {
+  .product__item:nth-child(n) {
+    grid-column: 1;
+    margin-top: 0;
+  }
 }
 
 @keyframes productHeroFadeIn {

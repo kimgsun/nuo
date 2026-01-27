@@ -17,14 +17,14 @@ function buildProjectItem(projectId, projectData) {
         <figure>
           <img src="${projectData.image}" alt="${projectData.title}">
         </figure>
-        <div class="product__item-content">
+        <div class="product__content">
           <h3>${projectData.title}</h3>
-          <div class="product__item-meta">
-            <span class="product__item-meta-line"></span>
+          <div class="product__meta">
+            <span class="product__meta-line"></span>
             <p>${projectData.category} / ${projectData.year}</p>
           </div>
-          <p class="product__item-summary">${projectData.summary}</p>
-          <p class="product__item-story">${projectData.story}</p>
+          <p class="product__summary">${projectData.summary}</p>
+          <p class="product__story">${projectData.story}</p>
         </div>
       </a>
     </article>

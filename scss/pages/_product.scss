@@ -183,7 +183,7 @@
           filter: grayscale(0%);
         }
 
-        .product__item-meta-line {
+        .product__meta-line {
           width: 50px;
           background: rgba($color-main, 0.6);
         }
@@ -192,57 +192,82 @@
           color: $color-main;
         }
 
-        .product__item-summary {
+        .product__summary {
           color: $color-main;
         }
       }
     }
 
-    &-content {
-      padding: 0 $sp-xs;
-      transition: transform 0.3s ease;
-    }
+  }
+
+  &__content {
+    padding: 0 $sp-xs;
+    transition: transform 0.3s ease;
 
     h3 {
       margin-bottom: $sp-sm;
       transition: color 0.3s ease;
     }
+  }
 
-    &-meta {
-      display: flex;
-      align-items: center;
-      gap: $sp-sm;
-      margin-bottom: $sp-md;
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: $sp-sm;
+    margin-bottom: $sp-md;
 
-      p {
-        font-size: $fs-xs;
-        color: rgba($color-main, 0.5);
-        text-transform: uppercase;
-        @include t { font-size: 0.6rem; }
-      }
-
-      &-line {
-        width: 30px;
-        height: 1px;
-        background: rgba($color-main, 0.2);
-        transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
-                    background 0.4s ease;
-      }
-    }
-
-    &-summary {
-      margin-bottom: $sp-sm;
-      font-size: $fs-base;
-      line-height: 1.6;
-      color: rgba($color-main, 0.8);
-      transition: color 0.3s ease;
-      @include t { font-size: $fs-sm; }
-    }
-
-    &-story {
-      font-size: $fs-sm;
-      line-height: 1.6;
+    p {
+      font-size: $fs-xs;
       color: rgba($color-main, 0.5);
+      text-transform: uppercase;
+      @include t { font-size: 0.6rem; }
+    }
+  }
+
+  &__meta-line {
+    width: 30px;
+    height: 1px;
+    background: rgba($color-main, 0.2);
+    transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                background 0.4s ease;
+  }
+
+  &__summary {
+    margin-bottom: $sp-sm;
+    font-size: $fs-base;
+    line-height: 1.6;
+    color: rgba($color-main, 0.8);
+    transition: color 0.3s ease;
+    @include t { font-size: $fs-sm; }
+  }
+
+  &__story {
+    font-size: $fs-sm;
+    line-height: 1.6;
+    color: rgba($color-main, 0.5);
+  }
+
+  &__item {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+    &:nth-child(3n+1) { grid-column: 1 / span 7; }
+    &:nth-child(3n+2) { 
+      grid-column: 8 / span 5; 
+      margin-top: 200px; 
+      @include d { margin-top: 100px; }
+      @include t { margin-top: 0; }
+    }
+    &:nth-child(3n) {
+      grid-column: 3 / span 8;
+      margin-top: 50px;
+      @include t { margin-top: 0; }
+    }
+    @include m { 
+      &:nth-child(n) { 
+        grid-column: 1;
+        margin-top: 0; 
+      } 
     }
   }
 }
