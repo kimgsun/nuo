@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="nuo에 문의하기 - 당신의 공간 이야기를 들려주세요">
+  <link rel="icon" type="image/png" href="image/favicon.png">
+  <title>Contact | nuo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/common.js" defer></script>
+  <script type="module" src="js/pages/contact.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="header__logo" aria-label="nuo 홈으로 이동">nuo</a>
+    <button class="header__toggle" aria-label="메뉴 열기" aria-expanded="false"></button>
+    <nav class="header__nav" aria-label="주요 메뉴">
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="product.html">Product</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact">
+      <div class="contact__bg" aria-hidden="true"></div>
+      <div class="container">
+        <h2>정제된 형태부터 섬세한 디테일까지,<br>당신의 공간을 새로운 감각으로<br><span>재해석</span>합니다.</h2>
+        <p class="contact__intro">더 나은 공간을 향한 기분 좋은 시작,<br>nuo와 함께 당신의 이야기를 들려주세요.</p>
+
+        <address class="contact__info">
+          <div>
+            <span class="contact__info-label">Email</span>
+            <div><a href="mailto:contact@nuo.studio">contact@nuo.studio</a></div>
+          </div>
+          <div>
+            <span class="contact__info-label">Phone</span>
+            <div><a href="tel:+821012345678">+82 10-1234-5678</a></div>
+          </div>
+          <div>
+            <span class="contact__info-label">Address</span>
+            <div>서울특별시 강남구 테헤란로 123</div>
+          </div>
+          <div>
+            <span class="contact__info-label">Hours</span>
+            <div>월-금 10:00 - 18:00<br>상담은 예약제로 진행됩니다</div>
+          </div>
+        </address>
+
+        <form class="form" novalidate>
+          <div class="form__group">
+            <label for="name">Name <span class="required" aria-label="필수 항목">*</span></label>
+            <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required aria-describedby="name-error">
+            <span class="form__error" id="name-error" role="alert">이름을 입력해주세요.</span>
+          </div>
+          <div class="form__group">
+            <label for="email">Email <span class="required" aria-label="필수 항목">*</span></label>
+            <input type="email" id="email" name="email" placeholder="example@email.com" required aria-describedby="email-error">
+            <span class="form__error" id="email-error" role="alert">올바른 이메일 형식을 입력해주세요.</span>
+          </div>
+          <div class="form__group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" maxlength="13">
+          </div>
+          <fieldset class="form__group form__radio-group">
+            <legend>Project Type <span class="required" aria-label="필수 항목">*</span></legend>
+            <div class="form__radio">
+              <label>
+                <input type="checkbox" name="project-type" value="residential" required>
+                <span>주거 공간</span>
+              </label>
+              <label>
+                <input type="checkbox" name="project-type" value="commercial" required>
+                <span>상업 공간</span>
+              </label>
+              <label>
+                <input type="checkbox" name="project-type" value="spatial" required>
+                <span>공간 디자인</span>
+              </label>
+            </div>
+            <span class="form__error" role="alert">프로젝트 유형을 선택해주세요.</span>
+          </fieldset>
+          <div class="form__group">
+            <label for="message">Message <span class="required" aria-label="필수 항목">*</span></label>
+            <textarea id="message" name="message" placeholder="프로젝트에 대해 간단히 설명해주세요" required aria-describedby="message-error"></textarea>
+            <span class="form__error" id="message-error" role="alert">메시지를 입력해주세요.</span>
+          </div>
+          <button type="submit" class="form__submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 nuo Studio. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
