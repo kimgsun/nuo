@@ -39,15 +39,16 @@ BEM, 속성 순서, SCSS, HTML 적용 규칙 — 요약 정리.
 
 - **컬러**: `$color-main`, `$color-sub`, `$white`, `$black`, `$color-border`, `$color-bg-light`, `$color-error`
 - **타이포**: `$font-base`, `$fs-xs` ~ `$fs-5xl`
-- **간격·브레이크**: `$sp-xs` ~ `$sp-5xl`, `$mobile`, `$tablet`, `$desktop`, `$inner-width`, `$trans`
-- **원칙**: 값은 변수만 사용. SCSS 내부에 숫자·색 직접 기입 금지.
+- **간격·브레이크**: `$sp-xs` ~ `$sp-5xl`, `$mobile`, `$tablet`, `$desktop`, `$inner-width`
+- **트랜지션**: `$trans`(0.3s ease), `$trans-slow`(1.2s cubic-bezier)
+- **원칙**: 재사용 가능한 값은 변수 정의. 단 1곳 사용 특수값은 직접 기입 허용
 
 ### Mixin
 
-- **미디어 쿼리**: `@include m`(mobile), `@include t`(tablet), `@include d`(desktop) — max-width 기준, 모바일 퍼스트
+- **미디어 쿼리**: `@include m`(mobile), `@include t`(tablet), `@include d`(desktop) — max-width 기준 Desktop First
 - **레이아웃**: `flex-center`, `flex-between`
 - **도메인**: `section-padding`, `section-header`, `img-grayscale`, `bg-overlay`, `tab-panel`, `tab-panel-item`, `grid-bg`, `grid-bg-white`
-- **기준**: 두 번 이상 쓰는 패턴만 Mixin으로 분리.
+- **기준**: 두 번 이상 쓰는 패턴만 Mixin으로 분리
 
 ## 모듈화 구조
 
@@ -65,3 +66,4 @@ scss/
 - **구조**: `header`, `main`, `section`, `article`, `footer`, `nav` 시맨틱 태그 우선
 - **래퍼**: `div.wrapper`, `div.inner` 사용 금지. 넓이 제한은 `.container`(max-width: $inner-width)만 사용
 - **클래스·id·data**: **kebab-case**(소문자+하이픈) 통일. 예: `hero__grid`, `philosophy-content-nuovo`, `data-category="all"`
+- **애니메이션**: `data-scroll-animate`(타입), `data-scroll-delay`(ms) 속성으로 제어. 타입: fade-up/down/left/right, zoom-in/out, fade
