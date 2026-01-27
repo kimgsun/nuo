@@ -1,0 +1,106 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $sp-md $sp-xl;
+  border-bottom: 1px solid rgba($color-main, 0.05);
+  background: rgba($white, 0.98);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 1px 20px rgba($color-main, 0.08);
+  transition: $trans;
+  @include t { box-shadow: 0 1px 20px rgba($color-main, 0.08); }
+
+  &__logo,
+  &__toggle {
+    transition: $trans;
+    &:hover { color: rgba($color-main, 0.3); }
+  }
+
+  &__logo {
+    font-size: $fs-2xl;
+    font-weight: 700;
+    color: $black;
+  }
+
+  &__toggle {
+    display: none;
+    z-index: 1001;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: $sp-xs;
+    font-size: $fs-2xl;
+    color: $color-main;
+    @include t { display: flex; }
+
+    &::before { content: '☰'; }
+    &--active::before { content: '✕'; }
+  }
+
+  &__nav {
+    @include t {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1000;
+      padding-top: $sp-2xl;
+      background: rgba($color-bg-light, 0.9);
+      backdrop-filter: blur(20px);
+      transform: translateY(-100%);
+      transition: transform $trans;
+    }
+
+    &--open { @include t { transform: translateY(0); } }
+
+    ul {
+      display: flex;
+      gap: $sp-xl;
+      @include t { 
+        flex-direction: column;
+        width: 100%;
+        gap: 0; 
+      }
+    }
+
+    a {
+      position: relative;
+      padding: $sp-xs $sp-sm;
+      padding-bottom: calc(#{$sp-xs} + 2px);
+      font-size: $fs-base;
+      color: rgba($color-main, 0.8);
+      transition: $trans;
+      @include t {
+        display: block;
+        width: 100%;
+        padding: $sp-md $sp-2xl;
+        border-bottom: 1px solid rgba($color-main, 0.05);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: $sp-sm;
+        width: calc(100% - #{$sp-sm * 2});
+        height: 1.5px;
+        transform: scaleX(0);
+        transform-origin: left;
+        background: $color-main;
+        transition: $trans;
+        @include t { display: none; }
+      }
+
+      &:hover,
+      &.active {
+        color: $color-main;
+        &::after { transform: scaleX(1); }
+        @include t { background: rgba($white, 0.8); }
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+@mixin m { @media (max-width: #{$mobile - 1px}) { @content; } }
+@mixin t { @media (max-width: #{$tablet - 1px}) { @content; } }
+@mixin d { @media (max-width: #{$desktop - 1px}) { @content; } }
+
+@mixin flex-center { display: flex; align-items: center; justify-content: center; }
+@mixin flex-between { display: flex; align-items: center; justify-content: space-between; }
+
+@mixin grid-bg($size: 40px, $opacity: 0.05, $color: $color-main) {
+  background-image: 
+    linear-gradient(rgba($color, $opacity) 1px, transparent 1px),
+    linear-gradient(90deg, rgba($color, $opacity) 1px, transparent 1px);
+  background-size: $size $size;
+}
+
+@mixin grid-bg-white($size: 40px, $opacity: 0.05) {
+  @include grid-bg($size, $opacity, $white);
+}
+
+@mixin section-padding {
+  padding: $sp-5xl 0;
+  @include t { padding: $sp-4xl 0; }
+}
+
+@mixin img-grayscale {
+  filter: grayscale(100%);
+  transition: filter $trans;
+  @media (hover: hover) {
+    &:hover { filter: grayscale(0%); }
+  }
+}
+
+@mixin bg-overlay($opacity: 0.6) {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: $opacity;
+}
+
+@mixin section-header {
+  text-align: center;
+  margin-bottom: $sp-3xl;
+}
+
+@mixin tab-panel {
+  position: relative;
+  min-height: 200px;
+}
+
+@mixin tab-panel-item {
+  display: none;
+  width: 100%;
+  padding: $sp-2xl 0;
+  text-align: center;
+  background: $white;
+  
+  &--active {
+    display: block;
+    
+    .quote,
+    p {
+      animation: slideUpText 0.5s ease forwards;
+    }
+  }
+}
+
+@keyframes slideUpText {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}

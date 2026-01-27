@@ -1,0 +1,11 @@
+.footer {
+  padding: $sp-xl 0;
+  text-align: center;
+  background: $white;
+
+  p {
+    font-size: $fs-sm;
+    font-weight: 300;
+    color: rgba($color-main, 0.6);
+  }
+}
