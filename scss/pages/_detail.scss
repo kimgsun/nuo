@@ -4,6 +4,7 @@
   overflow: hidden;
   border-top: 1px solid $color-border;
   background: rgba($color-main, 0.03);
+  animation: projectHeroFadeIn 1s ease-out;
   @include t { padding: $sp-3xl 0; }
 
   &::before {
@@ -19,6 +20,7 @@
   h1 {
     margin-bottom: $sp-3xl;
     line-height: 1.1;
+    animation: projectHeroTitleSlide 0.8s ease-out 0.2s backwards;
     @include t { margin-bottom: $sp-xl; }
   }
 
@@ -28,6 +30,7 @@
     gap: $sp-xl;
     padding-top: $sp-xl;
     border-top: 1px solid $color-main;
+    animation: projectHeroMetaSlide 0.8s ease-out 0.4s backwards;
     @include t { 
       grid-template-columns: repeat(2, 1fr);
       gap: $sp-lg;
@@ -57,7 +60,6 @@
   background: $white;
 
   .container {
-    max-width: 600px;
     padding: 0;
     text-align: center;
   }
@@ -191,5 +193,36 @@
       font-weight: 700;
       @include t { width: 100%; }
     }
+  }
+}
+
+@keyframes projectHeroFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes projectHeroTitleSlide {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes projectHeroMetaSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

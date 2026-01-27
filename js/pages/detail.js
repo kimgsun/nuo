@@ -56,8 +56,8 @@ async function loadProjectDetail() {
     const highlightsList = document.querySelector('.project-highlights__list');
     if (highlightsList && projectData.highlights) {
       highlightsList.innerHTML = projectData.highlights
-        .map(highlight => `
-          <article>
+        .map((highlight, index) => `
+          <article data-scroll-animate="fade-up" data-scroll-delay="${index * 150}">
             <h3>${highlight.title}</h3>
             <p>${highlight.description}</p>
           </article>
@@ -69,6 +69,12 @@ async function loadProjectDetail() {
     if (nextProjectLink && projectData.nextProject) {
       nextProjectLink.href = `detail.html?project=${projectData.nextProject}`;
       nextProjectLink.textContent = `Next: ${projectData.nextTitle}`;
+    }
+
+    if (window.refreshScrollAnimations) {
+      setTimeout(() => {
+        window.refreshScrollAnimations();
+      }, 100);
     }
   } catch (error) {
     console.error('프로젝트 상세 로드 실패:', error);
