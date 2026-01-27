@@ -6,7 +6,7 @@
 
 **정제된 형태와 섬세한 감각이 만나는 공간 디자인 스튜디오**
 
-[Brand Guide](./docs/brand-guide.md) · [Live View](https://your-username.github.io/nuo/) · [Code](https://github.com/your-username/nuo)
+[Brand Guide](./docs/brand-guide.md) · [Coding Conventions](./docs/coding-conventions.md) · [Live View](https://your-username.github.io/nuo/)
 
 </div>
 
@@ -21,10 +21,11 @@
 ## ✨ 주요 기능
 
 - 🎨 **모노크롬 인터랙션** - 그레이스케일 기본, 호버 시 컬러 전환
+- ✨ **스크롤 애니메이션** - jQuery 기반 fade-up/down/left/right, zoom 애니메이션
 - 🔍 **프로젝트 필터링** - 카테고리별 동적 필터링 및 페이드 애니메이션
 - 📝 **실시간 폼 검증** - 이메일/전화번호 자동 포맷 및 실시간 에러 표시
 - 🖼️ **동적 프로젝트 렌더링** - JSON 기반 데이터 구조
-- 📱 **완전 반응형** - Mobile First 설계
+- 📱 **완전 반응형** - Desktop First, max-width 미디어 쿼리
 - ♿ **웹 접근성** - ARIA 속성, 시맨틱 마크업 준수
 
 <br/>
@@ -37,6 +38,7 @@
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
   <img src="https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white" alt="SCSS"/>
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
+  <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery"/>
 </div>
 
 ### Design & Tools
@@ -60,7 +62,9 @@ nuo/
 ├── contact.html               # 문의 폼
 ├── README.md
 ├── docs/
-│   └── brand-guide.md         # 기획서
+│   ├── brand-guide.md         # 기획서
+│   ├── coding-conventions.md  # 코딩 컨벤션
+│   └── accessibility-report.md # 접근성 리포트
 │
 ├── css/
 │   └── main.css               # 컴파일된 CSS
@@ -73,15 +77,16 @@ nuo/
 │   └── main.scss              # Entry point
 │
 ├── js/
-│   ├── common.js              # 공통 기능 (헤더 토글)
+│   ├── common.js              # 공통 기능 (헤더 토글, 탭 전환)
 │   ├── pages/
-│   │   ├── about.js           # 탭 전환
+│   │   ├── about.js           # About 프로세스 라인 진행률
 │   │   ├── product.js         # 프로젝트 필터링
 │   │   ├── detail.js          # 상세 페이지 렌더링
 │   │   ├── contact.js         # 폼 검증
 │   │   └── faq.js             # 아코디언
 │   └── utils/
-│       └── form-validator.js  # 검증 유틸리티
+│       ├── form-validator.js  # 검증 유틸리티
+│       └── scroll-animation.js # 스크롤 애니메이션
 │
 ├── data/
 │   └── projects.json         # 프로젝트 데이터
@@ -136,9 +141,26 @@ filter: grayscale(100%);
 ### 4️⃣ 탭 전환 (about.html, index.html)
 
 ```javascript
-// Philosophy 탭 (Nuovo/Nude)
+// common.js - Philosophy 탭 (Nuovo/Nude)
+- data-tab 속성 기반 동적 전환
 - aria-selected 동적 제어
+- BEM 수식어 자동 토글
 - CSS 애니메이션 (slideUpText)
+```
+
+### 5️⃣ 스크롤 애니메이션
+
+```javascript
+// jQuery 기반 Intersection 감지
+- fade-up/down/left/right, zoom-in/out 지원
+- data-scroll-animate, data-scroll-delay 속성
+- 동적 생성 요소 자동 감지
+```
+
+```html
+<section data-scroll-animate="fade-up" data-scroll-delay="200">
+  <!-- 스크롤 시 200ms 딜레이 후 아래에서 올라오는 애니메이션 -->
+</section>
 ```
 
 <br/>
@@ -293,11 +315,11 @@ npx http-server -p 8000
 
 ### SCSS
 
-- BEM 방법론 (간소화: `visual__box` 수준)
+- BEM 1단계 depth 엄격 준수 (`블록__요소` 형태만)
 - 속성 순서: **레이아웃 → 박스모델 → 시각효과 → 기타**
-- 주석 금지 (코드 자체로 가독성 확보)
-- `!important` 사용 금지
-- mixin은 코드로 직접 명시 (변수명 지양)
+- `!important` 절대 금지, 명시도로만 제어
+- Mixin: 2회 이상 사용 패턴만 정의
+- 재사용 가능한 값은 변수화, 특수값은 직접 기입 허용
 
 ### JavaScript
 
