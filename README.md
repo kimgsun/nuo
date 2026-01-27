@@ -6,7 +6,7 @@
 
 **정제된 형태와 섬세한 감각이 만나는 공간 디자인 스튜디오**
 
-[Brand Guide](./docs/brand-guide.md) · [Coding Conventions](./docs/coding-conventions.md) · [Live View](https://your-username.github.io/nuo/)
+[Brand Guide](./docs/brand-guide.md) · [Coding Conventions](./docs/coding-conventions.md) · [Live View](https://kimgsun.github.io/nuo/)
 
 </div>
 
@@ -46,6 +46,7 @@
 <div>
   <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma"/>
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git"/>
+  <img src="https://img.shields.io/badge/GitHub_Pages-222222?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Pages"/>
 </div>
 
 <br/>
@@ -215,11 +216,9 @@ $desktop: 1024px; // @include d
 ### 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/your-username/nuo.git
+git clone https://github.com/kimgsun/nuo.git
 cd nuo
 ```
-
-> 저장소 URL은 본인 GitHub 사용자명과 레포지토리명으로 교체하세요.
 
 ### 2️⃣ SCSS 컴파일
 
@@ -333,8 +332,8 @@ npx http-server -p 8000
 
 | 구분           | 링크                            |
 | -------------- | ------------------------------- |
-| **Live View**  | (GitHub Pages 등 배포 URL 기입) |
-| **Repository** | (저장소 URL 기입)               |
+| **Live View**  | https://kimgsun.github.io/nuo/ |
+| **Repository** | https://github.com/kimgsun/nuo |
 
 <br/>
 
