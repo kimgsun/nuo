@@ -4,6 +4,7 @@
   align-items: center;
   min-height: calc(100vh - 70px);
   overflow: hidden;
+  animation: aboutHeroFadeIn 1.2s ease-out;
   @include t { 
     min-height: auto;
     padding: $sp-5xl 0; 
@@ -38,13 +39,14 @@
   &__content {
     max-width: 700px;
     color: $white;
+    animation: aboutHeroContentSlide 1s ease-out 0.3s backwards;
     @include t { 
       max-width: 100%;
       text-align: center; 
     }
   }
 
-  .label {
+  .common-label {
     margin-bottom: $sp-lg;
     color: rgba($white, 0.7);
     @include t { margin-bottom: $sp-md; }
@@ -347,5 +349,25 @@
         }
       }
     }
+  }
+}
+
+@keyframes aboutHeroFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes aboutHeroContentSlide {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

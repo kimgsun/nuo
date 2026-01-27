@@ -8,7 +8,9 @@
   <title>About | nuo</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
   <link rel="stylesheet" href="css/main.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="js/common.js" defer></script>
+  <script src="js/utils/scroll-animation.js"></script>
   <script type="module" src="js/pages/about.js"></script>
 </head>
 <body>
@@ -43,7 +45,7 @@
 
     <section class="about-origin">
       <div class="container">
-        <div class="about-origin__left">
+        <div class="about-origin__left" data-scroll-animate="fade-right">
           <header class="about-origin__header">
             <span class="common-label">The Brand Identity</span>
             <h2>The Origin of nuo</h2>
@@ -60,7 +62,7 @@
             </p>
           </div>
         </div>
-        <div class="about-origin__philosophy">
+        <div class="about-origin__philosophy" data-scroll-animate="fade-left">
           <div class="about-origin__tabs" role="tablist">
             <button class="about-origin__tab about-origin__tab--active" data-tab="nuovo" role="tab" aria-selected="true" aria-controls="philosophy-content-nuovo">
               Nuovo
@@ -98,7 +100,7 @@
           </header>
 
           <div class="about-standard__list">
-            <article>
+            <article data-scroll-animate="fade-up" data-scroll-delay="100">
               <div class="about-standard__num" aria-hidden="true">01</div>
               <h3>Solid Structural Integrity</h3>
               <p class="about-standard__item-subtitle">견고한 구조적 무결성</p>
@@ -108,7 +110,7 @@
               </p>
             </article>
 
-            <article>
+            <article data-scroll-animate="fade-up" data-scroll-delay="300">
               <div class="about-standard__num" aria-hidden="true">02</div>
               <h3>Refined Spatial Silence</h3>
               <p class="about-standard__item-subtitle">정제된 공간의 정적</p>
@@ -118,7 +120,7 @@
               </p>
             </article>
 
-            <article>
+            <article data-scroll-animate="fade-up" data-scroll-delay="500">
               <div class="about-standard__num" aria-hidden="true">03</div>
               <h3>Timeless Design Sensitivity</h3>
               <p class="about-standard__item-subtitle">변치 않는 디자인 감도</p>
@@ -143,7 +145,7 @@
           </header>
 
           <ol class="about-process__list">
-            <li class="about-process__item">
+            <li class="about-process__item" data-scroll-animate="fade-left" data-scroll-delay="0">
               <span class="about-process__num">01</span>
               <h3>Discovery</h3>
               <p class="about-process__period">2-4 Weeks</p>
@@ -152,7 +154,7 @@
               </p>
             </li>
 
-            <li class="about-process__item">
+            <li class="about-process__item" data-scroll-animate="fade-right" data-scroll-delay="100">
               <span class="about-process__num" aria-hidden="true">02</span>
               <h3>Design Development</h3>
               <p class="about-process__period">4-8 Weeks</p>
@@ -161,7 +163,7 @@
               </p>
             </li>
 
-            <li class="about-process__item">
+            <li class="about-process__item" data-scroll-animate="fade-left" data-scroll-delay="200">
               <span class="about-process__num" aria-hidden="true">03</span>
               <h3>Documentation</h3>
               <p class="about-process__period">4-6 Weeks</p>
@@ -170,7 +172,7 @@
               </p>
             </li>
 
-            <li class="about-process__item">
+            <li class="about-process__item" data-scroll-animate="fade-right" data-scroll-delay="300">
               <span class="about-process__num" aria-hidden="true">04</span>
               <h3>Construction</h3>
               <p class="about-process__period">6-12 Months</p>
@@ -179,7 +181,7 @@
               </p>
             </li>
 
-            <li class="about-process__item">
+            <li class="about-process__item" data-scroll-animate="fade-left" data-scroll-delay="400">
               <span class="about-process__num" aria-hidden="true">05</span>
               <h3>Completion</h3>
               <p class="about-process__period">2-4 Weeks</p>
@@ -198,21 +200,21 @@
             <h2>서비스 영역</h2>
           </header>
           <div class="about-service__list">
-            <article>
+            <article data-scroll-animate="zoom-in" data-scroll-delay="0">
               <h3>Residential</h3>
               <p>
                 <strong>삶의 패턴을 담아낸 아늑한 거주 공간을 기획합니다.</strong><br />
                 개인 주택부터 아파트, 빌라까지 사용자의 라이프스타일을 세밀하게 관찰하여, 시간이 흐를수록 가치가 깊어지는 맞춤형 주거 공간을 제안합니다.
               </p>
             </article>
-            <article>
+            <article data-scroll-animate="zoom-in" data-scroll-delay="200">
               <h3>Commercial</h3>
               <p>
                 <strong>브랜드의 정체성이 투영된 감각적인 공간 경험을 제안합니다.</strong><br />
                 카페, 레스토랑, 쇼룸 등 브랜드의 스토리를 공간이라는 언어로 번역하여 방문객에게 일관된 브랜드 경험을 전달하도록 설계합니다.
               </p>
             </article>
-            <article>
+            <article data-scroll-animate="zoom-in" data-scroll-delay="400">
               <h3>Spatial Design</h3>
               <p>
                 <strong>소재와 빛, 동선의 조화를 통해 머무름의 가치를 완성합니다.</strong><br />
