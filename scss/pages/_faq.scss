@@ -1,0 +1,210 @@
+.faq-hero {
+  position: relative;
+  padding: $sp-5xl 0 $sp-4xl;
+  overflow: hidden;
+  border-top: 1px solid $color-border;
+  @include t { padding: $sp-3xl 0; }
+
+  &::before {
+    @include bg-overlay(0.4);
+    @include grid-bg(50px, 0.03);
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  h1 {
+    margin-bottom: $sp-lg;
+    color: $color-main;
+    @include t { margin-bottom: $sp-md; }
+  }
+
+  p {
+    margin: 0 auto;
+    font-size: $fs-lg;
+    line-height: 1.8;
+    color: rgba($color-main, 0.7);
+    @include t { font-size: $fs-base; }
+  }
+}
+
+.faq {
+  position: relative;
+  padding-bottom: $sp-5xl;
+
+  &::before {
+    @include bg-overlay(1);
+    @include grid-bg(100px, 0.04);
+  }
+
+  &__list {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  &__item {
+    border-bottom: 1px solid rgba($color-main, 0.08);
+    transition: background $trans;
+    &:first-child { border-top: 1px solid rgba($color-main, 0.08); }
+
+    &:hover {
+      background: rgba($color-main, 0.02);
+    }
+
+    &--active {
+      background: rgba($color-main, 0.03);
+    }
+
+    dt { margin: 0; }
+    dd { margin: 0; }
+  }
+
+  &__label {
+    min-width: 30px;
+    font-size: $fs-sm;
+    font-weight: 700;
+    color: rgba($color-main, 0.2);
+  }
+
+  &__q {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: $sp-md;
+    padding: $sp-xl $sp-2xl;
+    border: none;
+    font-size: $fs-lg;
+    font-weight: 600;
+    color: $color-main;
+    text-align: left;
+    background: none;
+    cursor: pointer;
+    transition: color $trans;
+    @include t { 
+      padding: $sp-lg 0;
+      font-size: $fs-base; 
+    }
+
+    span:not(.faq__label):not(.faq__icon) {
+      flex: 1;
+    }
+
+    &:hover { color: rgba($color-main, 0.6); }
+  }
+
+  &__icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+
+    &::before {
+      content: "+";
+      font-size: $fs-xl;
+      font-weight: 300;
+      line-height: 1;
+      color: $color-main;
+      transition: transform $trans;
+    }
+
+    .faq__item--active &::before {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__a {
+    display: flex;
+    gap: $sp-md;
+    max-height: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.4s ease 0.1s, 
+                padding 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    .faq__item--active & {
+      max-height: 600px;
+      padding: $sp-sm $sp-2xl $sp-xl $sp-2xl;
+      opacity: 1;
+      @include t { padding: $sp-sm $sp-lg $sp-xl $sp-xl; }
+    }
+
+    p {
+      font-size: $fs-base;
+      line-height: 1.85;
+      color: rgba($color-main, 0.8);
+      @include t { font-size: $fs-sm; }
+    }
+  }
+}
+
+.faq-contact {
+  position: relative;
+  @include section-padding;
+  overflow: hidden;
+  background: $color-main;
+  color: $white;
+
+  &::before {
+    @include bg-overlay(0.6);
+    @include grid-bg-white(40px, 0.05);
+  }
+
+  .container { 
+    position: relative;
+    z-index: 1;
+    max-width: 1000px; 
+  }
+
+  h2 {
+    margin-bottom: $sp-xl;
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $sp-3xl;
+    padding-top: $sp-2xl;
+    border-top: 1px solid rgba($white, 0.1);
+    @include t { 
+      grid-template-columns: 1fr; 
+      gap: $sp-lg; 
+    }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $sp-xs;
+
+      .label {
+        font-weight: 700;
+        color: rgba($white, 0.3);
+      }
+
+      span,
+      a {
+        font-size: $fs-sm;
+        line-height: 1.6;
+        color: rgba($white, 0.8);
+      }
+
+      a {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        transition: color $trans;
+        &:hover { color: $white; }
+      }
+    }
+  }
+}
