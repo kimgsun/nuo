@@ -1,0 +1,351 @@
+.about-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 70px);
+  overflow: hidden;
+  @include t { 
+    min-height: auto;
+    padding: $sp-5xl 0; 
+  }
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%) brightness(0.4);
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(to bottom, rgba($color-main, 0.3), rgba($color-main, 0.6));
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__content {
+    max-width: 700px;
+    color: $white;
+    @include t { 
+      max-width: 100%;
+      text-align: center; 
+    }
+  }
+
+  .label {
+    margin-bottom: $sp-lg;
+    color: rgba($white, 0.7);
+    @include t { margin-bottom: $sp-md; }
+  }
+
+  h1 {
+    margin-bottom: $sp-xl;
+    line-height: 1.2;
+    color: $white;
+    @include t { margin-bottom: $sp-lg; }
+  }
+
+  p {
+    font-size: $fs-lg;
+    line-height: 1.85;
+    color: rgba($white, 0.9);
+    @include t { font-size: $fs-base; }
+
+    strong {
+      font-weight: 600;
+      color: $white;
+    }
+  }
+}
+
+.about-origin {
+  @include section-padding;
+  background: rgba($color-main, 0.04);
+
+  .container {
+    display: flex;
+    align-items: center;
+    gap: $sp-4xl;
+    @include t { flex-direction: column; }
+  }
+
+  &__left {
+    flex: 1;
+
+    header {
+      margin-bottom: $sp-3xl;
+      @include t { text-align: center; }
+    }
+  }
+
+  &__text {
+    @include t { text-align: center; }
+
+    p {
+      margin-bottom: $sp-lg;
+      font-size: $fs-base;
+      line-height: 1.8;
+      color: rgba($color-main, 0.7);
+      @include t { font-size: $fs-sm; }
+    }
+  }
+
+  &__intro {
+    margin-bottom: $sp-xl;
+    font-size: $fs-xl;
+    font-weight: 500;
+    line-height: 1.7;
+    color: $color-main;
+    @include t { font-size: $fs-lg; }
+  }
+
+  &__philosophy {
+    flex: 0 0 500px;
+    padding: $sp-xl;
+    border: 1px solid $color-border;
+    background: $white;
+    @include t { 
+      flex: 1;
+      width: 100%; 
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid $color-border;
+  }
+
+  &__tab {
+    position: relative;
+    padding: $sp-sm $sp-xl;
+    border: none;
+    font-size: $fs-sm;
+    font-weight: 500;
+    color: rgba($color-main, 0.4);
+    text-transform: uppercase;
+    background: transparent;
+    cursor: pointer;
+
+    &--active {
+      font-weight: 700;
+      color: $color-main;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: $color-main;
+      }
+    }
+  }
+
+  &__content {
+    @include tab-panel;
+  }
+
+  &__panel {
+    @include tab-panel-item;
+    padding: $sp-2xl 0 $sp-xl;
+  }
+}
+
+.about-standard {
+  @include section-padding;
+  border-top: 1px solid $color-border;
+
+  &__header {
+    @include section-header;
+  }
+
+  &__subtitle {
+    display: block;
+    margin-top: $sp-sm;
+    font-size: $fs-base;
+    font-weight: 500;
+    color: rgba($color-main, 0.4);
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include t { 
+      grid-template-columns: 1fr;
+      gap: $sp-2xl; 
+    }
+
+    article {
+      position: relative;
+      padding: 0 $sp-xl;
+      text-align: center;
+
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 1px;
+        background: $color-border;
+        @include t { display: none; }
+      }
+
+      h3 {
+        margin-bottom: $sp-xs;
+      }
+
+      p {
+        font-size: $fs-base;
+        line-height: 1.7;
+        color: rgba($color-main, 0.7);
+      }
+    }
+  }
+
+  &__num {
+    margin-bottom: $sp-sm;
+    font-size: $fs-3xl;
+    font-weight: 700;
+    color: rgba($color-main, 0.15);
+  }
+
+  &__item-subtitle {
+    margin-bottom: $sp-md;
+    font-size: $fs-sm;
+    font-weight: 500;
+    color: rgba($color-main, 0.4);
+  }
+}
+
+.about-process {
+  @include section-padding;
+  background: rgba($color-main, 0.04);
+
+  &__header {
+    @include section-header;
+    p { 
+      font-size: $fs-base;
+      color: rgba($color-main, 0.6); 
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+    gap: $sp-4xl;
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+    padding-left: $sp-5xl;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 25px;
+      left: 10px;
+      width: 1px;
+      height: calc(100% + #{$sp-4xl});
+      background: rgba($color-main, 0.15);
+    }
+    &:last-child::before { display: none; }
+
+    h3 {
+      margin-bottom: $sp-xs;
+      font-size: $fs-xl;
+      font-weight: 700;
+      @include t { font-size: $fs-lg; }
+    }
+
+    p {
+      font-size: $fs-base;
+      line-height: 1.7;
+      color: rgba($color-main, 0.7);
+    }
+  }
+
+  &__num {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: 1.5px solid $color-main;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 700;
+    background: $white;
+  }
+
+  &__period {
+    display: block;
+    margin-bottom: $sp-xs;
+    font-size: $fs-xs;
+    font-weight: 600;
+    color: rgba($color-main, 0.4);
+    text-transform: uppercase;
+  }
+}
+
+.about-service {
+  @include section-padding;
+
+  &__header {
+    margin-bottom: $sp-3xl;
+    @include t { text-align: center; }
+  }
+
+  &__list {
+    article {
+      display: flex;
+      padding: $sp-2xl 0;
+      border-top: 1px solid $color-border;
+      @include t { 
+        flex-direction: column;
+        gap: $sp-sm; 
+      }
+
+      &:last-child { border-bottom: 1px solid $color-border; }
+
+      h3 {
+        width: 30%;
+        @include t { width: 100%; }
+      }
+
+      p {
+        flex: 1;
+        font-size: $fs-base;
+        line-height: 1.7;
+        color: rgba($color-main, 0.6);
+        strong {
+          display: block;
+          margin-bottom: 6px;
+          font-size: $fs-lg;
+          font-weight: 600;
+          color: $color-main;
+        }
+      }
+    }
+  }
+}
