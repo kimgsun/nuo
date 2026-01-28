@@ -342,11 +342,6 @@ ul, ol {
     margin-bottom: 1rem;
   }
 }
-@media (max-width: 479px) {
-  .common-label {
-    margin-bottom: 0;
-  }
-}
 
 .common-quote {
   margin-bottom: 1rem;
@@ -2253,6 +2248,11 @@ ul, ol {
 .project-hero__meta .meta-item .common-label {
   font-weight: 700;
   color: rgba(26, 26, 26, 0.3);
+}
+@media (max-width: 479px) {
+  .project-hero__meta .meta-item .common-label {
+    margin-bottom: 0;
+  }
 }
 .project-hero__meta .meta-item span:not(.common-label) {
   font-size: 0.875rem;

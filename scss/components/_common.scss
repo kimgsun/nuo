@@ -21,9 +21,6 @@
   @include t {
     margin-bottom: $sp-md;
   }
-  @include m {
-    margin-bottom: 0;
-  }
 }
 
 .common-quote {

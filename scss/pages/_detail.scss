@@ -48,6 +48,9 @@
       .common-label {
         font-weight: 700;
         color: rgba($color-main, 0.3);
+        @include m {
+          margin-bottom: 0;
+        }
       }
 
       span:not(.common-label) {
