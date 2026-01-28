@@ -104,6 +104,9 @@
       padding: $sp-lg 0;
       font-size: $fs-base;
     }
+    @include m {
+      padding: 0.5rem 2rem;
+    }
 
     span:not(.faq__label):not(.faq__icon) {
       flex: 1;

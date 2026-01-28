@@ -223,6 +223,9 @@
       position: relative;
       padding: 0 $sp-xl;
       text-align: center;
+      @include m {
+        padding: 0;
+      }
 
       &:not(:last-child)::after {
         content: "";
@@ -270,9 +273,19 @@
 
   &__header {
     @include section-header;
+
+    h2 {
+      @include m {
+        margin: $sp-xs 0 $sp-md;
+      }
+    }
+
     p {
       font-size: $fs-base;
       color: rgba($color-main, 0.6);
+      @include m {
+        font-size: $fs-sm;
+      }
     }
   }
 
@@ -288,6 +301,9 @@
   &__item {
     position: relative;
     padding-left: $sp-5xl;
+    @include m {
+      padding-left: 4rem;
+    }
 
     &::before {
       content: "";

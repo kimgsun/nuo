@@ -5,23 +5,27 @@
   border-top: 1px solid $color-border;
   background: rgba($color-main, 0.03);
   animation: projectHeroFadeIn 1s ease-out;
-  @include t { padding: $sp-3xl 0; }
+  @include t {
+    padding: $sp-3xl 0;
+  }
 
   &::before {
     @include bg-overlay(0.5);
     @include grid-bg(60px, 0.03);
   }
 
-  .container { 
+  .container {
     position: relative;
-    z-index: 1; 
+    z-index: 1;
   }
 
   h1 {
     margin-bottom: $sp-3xl;
     line-height: 1.1;
     animation: projectHeroTitleSlide 0.8s ease-out 0.2s backwards;
-    @include t { margin-bottom: $sp-xl; }
+    @include t {
+      margin-bottom: $sp-xl;
+    }
   }
 
   &__meta {
@@ -31,7 +35,7 @@
     padding-top: $sp-xl;
     border-top: 1px solid $color-main;
     animation: projectHeroMetaSlide 0.8s ease-out 0.4s backwards;
-    @include t { 
+    @include t {
       grid-template-columns: repeat(2, 1fr);
       gap: $sp-lg;
     }
@@ -60,7 +64,6 @@
   background: $white;
 
   .container {
-    padding: 0;
     text-align: center;
   }
 
@@ -76,7 +79,9 @@
       font-size: $fs-base;
       line-height: 1.85;
       color: rgba($color-main, 0.7);
-      @include t { font-size: $fs-sm; }
+      @include t {
+        font-size: $fs-sm;
+      }
     }
   }
 }
@@ -87,8 +92,12 @@
 
   article {
     margin-bottom: $sp-xl;
-    @include t { margin-bottom: $sp-md; }
-    &:last-child { margin-bottom: 0; }
+    @include t {
+      margin-bottom: $sp-md;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     img {
       display: block;
@@ -110,9 +119,9 @@
     @include grid-bg-white(40px, 0.05);
   }
 
-  .container { 
+  .container {
     position: relative;
-    z-index: 1; 
+    z-index: 1;
   }
 
   h2 {
@@ -125,9 +134,9 @@
     grid-template-columns: repeat(3, 1fr);
     gap: $sp-3xl;
     counter-reset: section;
-    @include t { 
+    @include t {
       grid-template-columns: 1fr;
-      gap: $sp-2xl; 
+      gap: $sp-2xl;
     }
 
     article {
@@ -181,9 +190,9 @@
     max-width: 600px;
     margin: 0 auto;
     gap: $sp-xl;
-    @include t { 
+    @include t {
       flex-direction: column;
-      gap: $sp-md; 
+      gap: $sp-md;
     }
 
     .btn--arrow {
@@ -191,7 +200,9 @@
       justify-content: center;
       font-size: $fs-xs;
       font-weight: 700;
-      @include t { width: 100%; }
+      @include t {
+        width: 100%;
+      }
     }
   }
 }
