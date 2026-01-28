@@ -650,7 +650,6 @@ ul, ol {
   }
 }
 .hero__desc {
-  max-width: 500px;
   margin-bottom: 3rem;
   font-size: 1.125rem;
   line-height: 1.8;
@@ -748,6 +747,11 @@ ul, ol {
   text-transform: uppercase;
   transition: 0.3s ease;
 }
+@media (max-width: 479px) {
+  .philosophy__tab {
+    font-size: 0.875rem;
+  }
+}
 .philosophy__tab:hover {
   background: rgba(255, 255, 255, 0.5);
 }
@@ -772,6 +776,11 @@ ul, ol {
 .philosophy__panel--active .quote,
 .philosophy__panel--active p {
   animation: slideUpText 0.5s ease forwards;
+}
+@media (max-width: 479px) {
+  .philosophy__panel-text p {
+    font-size: 0.75rem;
+  }
 }
 
 .works {
@@ -804,7 +813,6 @@ ul, ol {
   margin-bottom: 0;
 }
 .works__header p {
-  max-width: 450px;
   margin-bottom: 0;
   font-size: 1rem;
   color: rgba(26, 26, 26, 0.5);
@@ -879,13 +887,11 @@ ul, ol {
   z-index: 2;
 }
 .about-hero__content {
-  max-width: 700px;
   color: #fff;
   animation: aboutHeroContentSlide 1s ease-out 0.3s backwards;
 }
 @media (max-width: 767px) {
   .about-hero__content {
-    max-width: 100%;
     text-align: center;
   }
 }
@@ -983,7 +989,7 @@ ul, ol {
 }
 .about-origin__philosophy {
   flex: 0 0 500px;
-  padding: 2rem;
+  padding: 2rem 1.5rem;
   border: 1px solid #eee;
   background: #fff;
 }
@@ -1008,6 +1014,11 @@ ul, ol {
   text-transform: uppercase;
   background: transparent;
   cursor: pointer;
+}
+@media (max-width: 479px) {
+  .about-origin__tab {
+    font-size: 0.875rem;
+  }
 }
 .about-origin__tab--active {
   font-weight: 700;
@@ -1040,6 +1051,11 @@ ul, ol {
 .about-origin__panel--active .quote,
 .about-origin__panel--active p {
   animation: slideUpText 0.5s ease forwards;
+}
+@media (max-width: 479px) {
+  .about-origin__panel-text p {
+    font-size: 0.75rem;
+  }
 }
 
 .about-standard {
@@ -1132,7 +1148,6 @@ ul, ol {
 .about-process__list {
   display: flex;
   flex-direction: column;
-  max-width: 800px;
   margin: 0 auto;
   padding: 0;
   gap: 6rem;
@@ -1312,7 +1327,6 @@ ul, ol {
   }
 }
 .product-hero p {
-  max-width: 700px;
   margin: 0 auto;
   font-size: 1.125rem;
   line-height: 1.85;

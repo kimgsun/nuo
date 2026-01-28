@@ -5,9 +5,9 @@
   min-height: calc(100vh - 70px);
   overflow: hidden;
   animation: aboutHeroFadeIn 1.2s ease-out;
-  @include t { 
+  @include t {
     min-height: auto;
-    padding: $sp-5xl 0; 
+    padding: $sp-5xl 0;
   }
 
   &__bg {
@@ -28,7 +28,11 @@
     position: absolute;
     inset: 0;
     z-index: 1;
-    background: linear-gradient(to bottom, rgba($color-main, 0.3), rgba($color-main, 0.6));
+    background: linear-gradient(
+      to bottom,
+      rgba($color-main, 0.3),
+      rgba($color-main, 0.6)
+    );
   }
 
   .container {
@@ -37,33 +41,37 @@
   }
 
   &__content {
-    max-width: 700px;
     color: $white;
     animation: aboutHeroContentSlide 1s ease-out 0.3s backwards;
-    @include t { 
-      max-width: 100%;
-      text-align: center; 
+    @include t {
+      text-align: center;
     }
   }
 
   .common-label {
     margin-bottom: $sp-lg;
     color: rgba($white, 0.7);
-    @include t { margin-bottom: $sp-md; }
+    @include t {
+      margin-bottom: $sp-md;
+    }
   }
 
   h1 {
     margin-bottom: $sp-xl;
     line-height: 1.2;
     color: $white;
-    @include t { margin-bottom: $sp-lg; }
+    @include t {
+      margin-bottom: $sp-lg;
+    }
   }
 
   p {
     font-size: $fs-lg;
     line-height: 1.85;
     color: rgba($white, 0.9);
-    @include t { font-size: $fs-base; }
+    @include t {
+      font-size: $fs-base;
+    }
 
     strong {
       font-weight: 600;
@@ -80,7 +88,9 @@
     display: flex;
     align-items: center;
     gap: $sp-4xl;
-    @include t { flex-direction: column; }
+    @include t {
+      flex-direction: column;
+    }
   }
 
   &__left {
@@ -88,19 +98,25 @@
 
     header {
       margin-bottom: $sp-3xl;
-      @include t { text-align: center; }
+      @include t {
+        text-align: center;
+      }
     }
   }
 
   &__text {
-    @include t { text-align: center; }
+    @include t {
+      text-align: center;
+    }
 
     p {
       margin-bottom: $sp-lg;
       font-size: $fs-base;
       line-height: 1.8;
       color: rgba($color-main, 0.7);
-      @include t { font-size: $fs-sm; }
+      @include t {
+        font-size: $fs-sm;
+      }
     }
   }
 
@@ -110,17 +126,19 @@
     font-weight: 500;
     line-height: 1.7;
     color: $color-main;
-    @include t { font-size: $fs-lg; }
+    @include t {
+      font-size: $fs-lg;
+    }
   }
 
   &__philosophy {
     flex: 0 0 500px;
-    padding: $sp-xl;
+    padding: $sp-xl $sp-lg;
     border: 1px solid $color-border;
     background: $white;
-    @include t { 
+    @include t {
       flex: 1;
-      width: 100%; 
+      width: 100%;
     }
   }
 
@@ -140,6 +158,9 @@
     text-transform: uppercase;
     background: transparent;
     cursor: pointer;
+    @include m {
+      font-size: $fs-sm;
+    }
 
     &--active {
       font-weight: 700;
@@ -164,6 +185,14 @@
     @include tab-panel-item;
     padding: $sp-2xl 0 $sp-xl;
   }
+
+  &__panel-text {
+    p {
+      @include m {
+        font-size: $fs-xs;
+      }
+    }
+  }
 }
 
 .about-standard {
@@ -185,9 +214,9 @@
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    @include t { 
+    @include t {
       grid-template-columns: 1fr;
-      gap: $sp-2xl; 
+      gap: $sp-2xl;
     }
 
     article {
@@ -203,7 +232,9 @@
         bottom: 0;
         width: 1px;
         background: $color-border;
-        @include t { display: none; }
+        @include t {
+          display: none;
+        }
       }
 
       h3 {
@@ -239,16 +270,15 @@
 
   &__header {
     @include section-header;
-    p { 
+    p {
       font-size: $fs-base;
-      color: rgba($color-main, 0.6); 
+      color: rgba($color-main, 0.6);
     }
   }
 
   &__list {
     display: flex;
     flex-direction: column;
-    max-width: 800px;
     margin: 0 auto;
     padding: 0;
     gap: $sp-4xl;
@@ -268,13 +298,17 @@
       height: calc(100% + #{$sp-4xl});
       background: rgba($color-main, 0.15);
     }
-    &:last-child::before { display: none; }
+    &:last-child::before {
+      display: none;
+    }
 
     h3 {
       margin-bottom: $sp-xs;
       font-size: $fs-xl;
       font-weight: 700;
-      @include t { font-size: $fs-lg; }
+      @include t {
+        font-size: $fs-lg;
+      }
     }
 
     p {
@@ -315,7 +349,9 @@
 
   &__header {
     margin-bottom: $sp-3xl;
-    @include t { text-align: center; }
+    @include t {
+      text-align: center;
+    }
   }
 
   &__list {
@@ -323,16 +359,20 @@
       display: flex;
       padding: $sp-2xl 0;
       border-top: 1px solid $color-border;
-      @include t { 
+      @include t {
         flex-direction: column;
-        gap: $sp-sm; 
+        gap: $sp-sm;
       }
 
-      &:last-child { border-bottom: 1px solid $color-border; }
+      &:last-child {
+        border-bottom: 1px solid $color-border;
+      }
 
       h3 {
         width: 30%;
-        @include t { width: 100%; }
+        @include t {
+          width: 100%;
+        }
       }
 
       p {

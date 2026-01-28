@@ -5,9 +5,9 @@
   min-height: calc(100vh - 70px);
   overflow: hidden;
   animation: heroFadeIn 1.2s ease-out;
-  @include t { 
+  @include t {
     min-height: auto;
-    padding: $sp-5xl 0; 
+    padding: $sp-5xl 0;
   }
 
   &::before {
@@ -25,15 +25,17 @@
     grid-template-columns: 0.9fr 1.1fr;
     align-items: center;
     gap: $sp-4xl;
-    @include t { 
+    @include t {
       grid-template-columns: 1fr;
-      gap: $sp-2xl; 
+      gap: $sp-2xl;
     }
   }
 
   &__content {
     animation: heroContentSlide 1s ease-out 0.3s backwards;
-    @include t { text-align: center; }
+    @include t {
+      text-align: center;
+    }
   }
 
   &__label {
@@ -47,7 +49,9 @@
   h1 {
     margin-bottom: $sp-xl;
     line-height: 1.15;
-    span { color: rgba($color-main, 0.2); }
+    span {
+      color: rgba($color-main, 0.2);
+    }
   }
 
   &__line {
@@ -57,18 +61,19 @@
     border: none;
     background: $color-main;
     opacity: 0.2;
-    @include t { margin: $sp-xl auto; }
+    @include t {
+      margin: $sp-xl auto;
+    }
   }
 
   &__desc {
-    max-width: 500px;
     margin-bottom: $sp-2xl;
     font-size: $fs-lg;
     line-height: 1.8;
     color: rgba($color-main, 0.7);
-    @include t { 
+    @include t {
       margin: 0 auto $sp-2xl;
-      font-size: $fs-base; 
+      font-size: $fs-base;
     }
   }
 
@@ -86,7 +91,9 @@
       transition: 1s cubic-bezier(0.2, 1, 0.3, 1);
 
       @media (hover: hover) {
-        &:hover { transform: scale(1.05); }
+        &:hover {
+          transform: scale(1.05);
+        }
       }
     }
   }
@@ -113,12 +120,18 @@
     @include section-header;
     margin: 0 auto;
 
-    h2 { margin-bottom: $sp-lg; }
+    h2 {
+      margin-bottom: $sp-lg;
+    }
 
     p {
       font-size: $fs-base;
       color: rgba($color-main, 0.6);
-      @include m { & + p { margin-top: $sp-md; } }
+      @include m {
+        & + p {
+          margin-top: $sp-md;
+        }
+      }
     }
   }
 
@@ -145,8 +158,13 @@
     color: rgba($color-main, 0.4);
     text-transform: uppercase;
     transition: $trans;
+    @include m {
+      font-size: $fs-sm;
+    }
 
-    &:hover { background: rgba($white, 0.5); }
+    &:hover {
+      background: rgba($white, 0.5);
+    }
     &--active {
       color: $color-main;
       background: $white;
@@ -160,6 +178,14 @@
   &__panel {
     @include tab-panel-item;
   }
+
+  &__panel-text {
+    p {
+      @include m {
+        font-size: $fs-xs;
+      }
+    }
+  }
 }
 
 .works {
@@ -170,10 +196,10 @@
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: $sp-2xl;
-    @include t { 
+    @include t {
       flex-direction: column;
       align-items: flex-start;
-      gap: $sp-lg; 
+      gap: $sp-lg;
     }
 
     > div {
@@ -187,14 +213,15 @@
     }
 
     p {
-      max-width: 450px;
       margin-bottom: 0;
       font-size: $fs-base;
       color: rgba($color-main, 0.5);
     }
   }
 
-  .gallery { gap: $sp-2xl; }
+  .gallery {
+    gap: $sp-2xl;
+  }
 }
 
 @keyframes heroFadeIn {
