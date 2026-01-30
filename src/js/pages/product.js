@@ -51,10 +51,12 @@ function setupCategoryFilter(gridElement, allProjects) {
   filterButtons.forEach((button) => {
     button.addEventListener("click", function () {
       const selectedCategory = this.dataset.category;
-      filterButtons.forEach((btn) =>
-        btn.classList.remove("product__filter-btn--active"),
-      );
+      filterButtons.forEach((btn) => {
+        btn.classList.remove("product__filter-btn--active");
+        btn.setAttribute("aria-pressed", "false");
+      });
       this.classList.add("product__filter-btn--active");
+      this.setAttribute("aria-pressed", "true");
 
       gridElement.classList.add("product__grid--filtering");
       setTimeout(() => {
