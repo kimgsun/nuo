@@ -29,8 +29,8 @@
     z-index: 1;
     background: linear-gradient(
       to bottom,
-      rgba($color-main, 0.3),
-      rgba($color-main, 0.6)
+      rgba($clr-main, 0.3),
+      rgba($clr-main, 0.6)
     );
   }
 
@@ -47,7 +47,7 @@
     }
   }
 
-  .common-label {
+  .section-label {
     margin-bottom: $sp-lg;
     color: rgba($white, 0.7);
     @include m {
@@ -57,31 +57,31 @@
 
   h1 {
     margin-bottom: $sp-xl;
-    line-height: 1.2;
     color: $white;
+    line-height: 1.2;
     @include m {
       margin-bottom: $sp-lg;
     }
   }
 
   p {
-    font-size: $fs-lg;
-    line-height: 1.85;
     color: rgba($white, 0.9);
+    font-size: $fs-lead;
+    line-height: 1.85;
     @include m {
-      font-size: $fs-base;
+      font-size: $fs-body;
     }
 
     strong {
-      font-weight: 600;
       color: $white;
+      font-weight: 600;
     }
   }
 }
 
 .about-origin {
   @include section-padding;
-  background: rgba($color-main, 0.04);
+  background: rgba($clr-main, 0.04);
 
   .container {
     display: flex;
@@ -112,32 +112,31 @@
 
     p {
       margin-bottom: $sp-lg;
-      font-size: $fs-base;
+      color: rgba($clr-main, 0.7);
+      font-size: $fs-body;
       line-height: 1.8;
-      color: rgba($color-main, 0.7);
       @include m {
-        font-size: $fs-sm;
+        font-size: $fs-small;
       }
     }
   }
 
   &__intro {
     margin-bottom: $sp-xl;
-    font-size: $fs-xl;
+    color: $clr-main;
+    font-size: $fs-title-sm;
     font-weight: 500;
     line-height: 1.7;
-    color: $color-main;
     @include m {
-      font-size: $fs-lg;
+      font-size: $fs-lead;
     }
   }
 
   &__philosophy {
-    flex: 1 1 500px;
     min-width: 0;
     max-width: 500px;
     padding: $sp-xl $sp-lg;
-    border: 1px solid $color-border;
+    border: 1px solid $clr-border;
     background: $white;
     @include m {
       flex: 1;
@@ -149,27 +148,27 @@
   &__tabs {
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid $color-border;
+    border-bottom: 1px solid $clr-border;
   }
 
   &__tab {
     position: relative;
     padding: $sp-sm $sp-xl;
     border: none;
-    font-size: $fs-sm;
-    font-weight: 500;
-    color: rgba($color-main, 0.4);
-    text-transform: uppercase;
+    color: rgba($clr-main, 0.4);
     background: transparent;
+    font-size: $fs-small;
+    font-weight: 500;
+    text-transform: uppercase;
     cursor: pointer;
     @include small-m {
-      font-size: $fs-sm;
+      font-size: $fs-small;
       padding: $sp-xs $sp-md;
     }
 
     &--active {
       font-weight: 700;
-      color: $color-main;
+      color: $clr-main;
       &::after {
         content: "";
         position: absolute;
@@ -177,7 +176,7 @@
         left: 0;
         width: 100%;
         height: 2px;
-        background: $color-main;
+        background: $clr-main;
       }
     }
   }
@@ -194,7 +193,7 @@
   &__panel-text {
     p {
       @include small-m {
-        font-size: $fs-xs;
+        font-size: $fs-caption;
       }
     }
   }
@@ -202,7 +201,7 @@
 
 .about-standard {
   @include section-padding;
-  border-top: 1px solid $color-border;
+  border-top: 1px solid $clr-border;
 
   &__header {
     @include section-header;
@@ -210,9 +209,9 @@
     .about-standard__subtitle {
       display: block;
       margin-top: $sp-sm;
-      font-size: $fs-base;
+      color: rgba($clr-main, 0.4);
+      font-size: $fs-body;
       font-weight: 500;
-      color: rgba($color-main, 0.4);
     }
   }
 
@@ -239,7 +238,7 @@
         right: 0;
         bottom: 0;
         width: 1px;
-        background: $color-border;
+        background: $clr-border;
         @include m {
           display: none;
         }
@@ -251,30 +250,30 @@
 
       .about-standard__subtitle {
         margin-bottom: $sp-md;
-        font-size: $fs-sm;
+        color: rgba($clr-main, 0.4);
+        font-size: $fs-small;
         font-weight: 500;
-        color: rgba($color-main, 0.4);
       }
 
       p {
-        font-size: $fs-base;
+        color: rgba($clr-main, 0.7);
+        font-size: $fs-body;
         line-height: 1.7;
-        color: rgba($color-main, 0.7);
       }
     }
   }
 
   &__num {
     margin-bottom: $sp-sm;
-    font-size: $fs-3xl;
+    color: rgba($clr-main, 0.15);
+    font-size: $fs-title-lg;
     font-weight: 700;
-    color: rgba($color-main, 0.15);
   }
 }
 
 .about-process {
   @include section-padding;
-  background: rgba($color-main, 0.04);
+  background: rgba($clr-main, 0.04);
 
   &__header {
     @include section-header;
@@ -286,10 +285,10 @@
     }
 
     p {
-      font-size: $fs-base;
-      color: rgba($color-main, 0.6);
+      color: rgba($clr-main, 0.6);
+      font-size: $fs-body;
       @include small-m {
-        font-size: $fs-sm;
+        font-size: $fs-small;
       }
     }
   }
@@ -318,7 +317,7 @@
       left: 10px;
       width: 1px;
       height: calc(100% + #{$sp-4xl});
-      background: rgba($color-main, 0.15);
+      background: rgba($clr-main, 0.15);
     }
     &:last-child::before {
       display: none;
@@ -326,17 +325,17 @@
 
     h3 {
       margin-bottom: $sp-xs;
-      font-size: $fs-xl;
+      font-size: $fs-title-sm;
       font-weight: 700;
       @include m {
-        font-size: $fs-lg;
+        font-size: $fs-lead;
       }
     }
 
     p {
-      font-size: $fs-base;
+      color: rgba($clr-main, 0.7);
+      font-size: $fs-body;
       line-height: 1.7;
-      color: rgba($color-main, 0.7);
     }
   }
 
@@ -349,19 +348,19 @@
     justify-content: center;
     width: 24px;
     height: 24px;
-    border: 1.5px solid $color-main;
+    border: 1.5px solid $clr-main;
     border-radius: 50%;
+    background: $white;
     font-size: 11px;
     font-weight: 700;
-    background: $white;
   }
 
   &__period {
     display: block;
     margin-bottom: $sp-xs;
-    font-size: $fs-xs;
+    color: rgba($clr-main, 0.4);
+    font-size: $fs-caption;
     font-weight: 600;
-    color: rgba($color-main, 0.4);
     text-transform: uppercase;
   }
 }
@@ -380,14 +379,14 @@
     article {
       display: flex;
       padding: $sp-2xl 0;
-      border-top: 1px solid $color-border;
+      border-top: 1px solid $clr-border;
       @include m {
         flex-direction: column;
         gap: $sp-sm;
       }
 
       &:last-child {
-        border-bottom: 1px solid $color-border;
+        border-bottom: 1px solid $clr-border;
       }
 
       h3 {
@@ -399,15 +398,15 @@
 
       p {
         flex: 1;
-        font-size: $fs-base;
+        color: rgba($clr-main, 0.6);
+        font-size: $fs-body;
         line-height: 1.7;
-        color: rgba($color-main, 0.6);
         strong {
           display: block;
           margin-bottom: 6px;
-          font-size: $fs-lg;
+          font-size: $fs-lead;
           font-weight: 600;
-          color: $color-main;
+          color: $clr-main;
         }
       }
     }

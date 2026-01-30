@@ -1,0 +1,64 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: $sp-sm;
+  padding: $sp-sm $sp-lg;
+  border: 1.5px solid $clr-main;
+  color: $clr-main;
+  background: transparent;
+  font-size: $fs-small;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: $trans;
+  @include m {
+    padding: $sp-xs $sp-md;
+  }
+
+  &:hover {
+    color: $white;
+    background: $clr-main;
+    transform: translateX(4px);
+  }
+
+  &--arrow {
+    &:first-child::before {
+      content: "←";
+    }
+    &:last-child::after {
+      content: "→";
+    }
+  }
+}
+
+.btn:not(.btn--arrow) {
+  &::after {
+    content: "→";
+  }
+  &:hover::after {
+    transform: translateX(4px);
+  }
+}
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: $sp-md;
+  padding-bottom: $sp-xs;
+  border-bottom: 1.5px solid $white;
+  color: $white;
+  font-size: $fs-lead;
+  transition: $trans;
+  @include m {
+    font-size: $fs-small;
+  }
+
+  &::after {
+    content: "→";
+  }
+  &:hover {
+    border-bottom-width: 2px;
+    &::after {
+      transform: translateX(8px);
+    }
+  }
+}

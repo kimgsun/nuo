@@ -1,28 +1,28 @@
 @mixin small-m {
-  @media (max-width: #{$small-mobile - 1px}) {
+  @media (max-width: #{$bp-mobile-sm - 1px}) {
     @content;
   }
 }
 
 @mixin m {
-  @media (max-width: #{$mobile - 1px}) {
+  @media (max-width: #{$bp-mobile - 1px}) {
     @content;
   }
 }
 
 @mixin t {
-  @media (max-width: #{$tablet - 1px}) {
+  @media (max-width: #{$bp-tablet - 1px}) {
     @content;
   }
 }
 
 @mixin l {
-  @media (max-width: #{$laptop - 1px}) {
+  @media (max-width: #{$bp-laptop - 1px}) {
     @content;
   }
 }
 
-@mixin grid-bg($size: 40px, $opacity: 0.05, $color: $color-main) {
+@mixin grid-bg($size: 40px, $opacity: 0.05, $color: $clr-main) {
   background-image:
     linear-gradient(rgba($color, $opacity) 1px, transparent 1px),
     linear-gradient(90deg, rgba($color, $opacity) 1px, transparent 1px);

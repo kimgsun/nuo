@@ -40,9 +40,9 @@
 
   &__label {
     margin-bottom: $sp-md;
-    font-size: $fs-xs;
+    color: rgba($clr-main, 0.3);
+    font-size: $fs-caption;
     font-weight: 700;
-    color: rgba($color-main, 0.3);
     text-transform: uppercase;
   }
 
@@ -50,7 +50,7 @@
     margin-bottom: $sp-xl;
     line-height: 1.15;
     span {
-      color: rgba($color-main, 0.2);
+      color: rgba($clr-main, 0.2);
     }
   }
 
@@ -59,7 +59,7 @@
     height: 1px;
     margin: $sp-xl 0;
     border: none;
-    background: $color-main;
+    background: $clr-main;
     opacity: 0.2;
     @include m {
       margin: $sp-xl auto;
@@ -68,19 +68,19 @@
 
   &__desc {
     margin-bottom: $sp-2xl;
-    font-size: $fs-lg;
+    color: rgba($clr-main, 0.7);
+    font-size: $fs-lead;
     line-height: 1.8;
-    color: rgba($color-main, 0.7);
     @include m {
       margin: 0 auto $sp-2xl;
-      font-size: $fs-base;
+      font-size: $fs-body;
     }
   }
 
   &__img {
     aspect-ratio: 4 / 3;
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba($color-main, 0.1);
+    box-shadow: 0 20px 60px rgba($clr-main, 0.1);
     animation: heroImageScale 1s ease-out 0.5s backwards;
 
     img {
@@ -100,18 +100,18 @@
     right: -5%;
     bottom: -10%;
     z-index: 0;
+    color: $clr-main;
+    opacity: 0.03;
     font-size: 25vw;
     font-weight: 800;
     line-height: 1;
-    color: $color-main;
-    opacity: 0.03;
     pointer-events: none;
   }
 }
 
 .philosophy {
   @include section-padding;
-  background: rgba($color-main, 0.02);
+  background: rgba($clr-main, 0.03);
 
   &__header {
     @include section-header;
@@ -122,8 +122,8 @@
     }
 
     p {
-      font-size: $fs-base;
-      color: rgba($color-main, 0.6);
+      color: rgba($clr-main, 0.6);
+      font-size: $fs-body;
       @include small-m {
         & + p {
           margin-top: $sp-md;
@@ -136,34 +136,33 @@
     max-width: 900px;
     margin: $sp-2xl auto 0;
     padding: $sp-md;
-    border: 1px solid $color-border;
-    background: rgba($color-sub, 0.05);
-    box-shadow: 0 10px 30px rgba($color-main, 0.05);
+    background: rgba($clr-sub, 0.05);
+    box-shadow: 0 10px 30px rgba($clr-main, 0.05);
   }
 
   &__tabs {
     display: flex;
-    border-bottom: 1px solid $color-border;
+    border-bottom: 1px solid $clr-border;
   }
 
   &__tab {
     flex: 1;
     padding: $sp-md 0;
     border: none;
-    font-size: $fs-xs;
+    color: rgba($clr-main, 0.4);
+    font-size: $fs-caption;
     font-weight: 700;
-    color: rgba($color-main, 0.4);
     text-transform: uppercase;
     transition: $trans;
     @include small-m {
-      font-size: $fs-sm;
+      font-size: $fs-small;
     }
 
     &:hover {
       background: rgba($white, 0.5);
     }
     &--active {
-      color: $color-main;
+      color: $clr-main;
       background: $white;
     }
   }
@@ -187,7 +186,7 @@
   &__panel-text {
     p {
       @include small-m {
-        font-size: $fs-xs;
+        font-size: $fs-caption;
       }
     }
   }
@@ -197,30 +196,41 @@
   @include section-padding;
 
   &__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    align-items: end;
+    gap: $sp-sm $sp-xl;
     margin-bottom: $sp-2xl;
     @include m {
-      flex-direction: column;
-      align-items: flex-start;
+      grid-template-columns: 1fr;
+      align-items: start;
       gap: $sp-lg;
     }
 
-    > div {
-      display: flex;
-      flex-direction: column;
-      gap: $sp-sm;
-    }
-
     h2 {
+      grid-column: 1;
+      grid-row: 1;
       margin-bottom: 0;
     }
 
     p {
+      grid-column: 1;
+      grid-row: 2;
       margin-bottom: 0;
-      font-size: $fs-base;
-      color: rgba($color-main, 0.5);
+      color: rgba($clr-main, 0.5);
+      font-size: $fs-body;
+    }
+
+    a {
+      grid-column: 2;
+      grid-row: 1 / -1;
+      align-self: end;
+      justify-self: start;
+      @include m {
+        grid-column: 1;
+        grid-row: 3;
+      }
     }
   }
 
@@ -234,7 +244,7 @@
     }
 
     &__item {
-      box-shadow: 0 4px 16px rgba($color-main, 0.08);
+      box-shadow: 0 4px 16px rgba($clr-main, 0.08);
       background: $white;
       transition:
         transform 0.3s ease,
@@ -278,7 +288,7 @@
       &:hover {
         position: relative;
         z-index: 1;
-        box-shadow: 0 8px 24px rgba($color-main, 0.12);
+        box-shadow: 0 8px 24px rgba($clr-main, 0.12);
 
         img {
           filter: grayscale(0%);
@@ -286,7 +296,7 @@
 
         .gallery__line {
           width: 60px;
-          background: $color-main;
+          background: $clr-main;
         }
       }
 
@@ -319,7 +329,7 @@
 
     &__content {
       padding: $sp-xl;
-      border-top: 1px solid rgba($color-main, 0.05);
+      border-top: 1px solid rgba($clr-main, 0.05);
       @include t {
         padding: $sp-lg;
       }
@@ -329,11 +339,11 @@
       }
 
       p {
-        font-size: $fs-base;
+        font-size: $fs-body;
         font-weight: 200;
         line-height: 1.8;
         @include m {
-          font-size: $fs-xs;
+          font-size: $fs-caption;
         }
       }
     }
@@ -349,8 +359,8 @@
       }
 
       p {
-        font-size: $fs-xs;
-        color: rgba($color-main, 0.6);
+        color: rgba($clr-main, 0.6);
+        font-size: $fs-caption;
         text-transform: uppercase;
       }
     }
@@ -358,7 +368,7 @@
     &__line {
       width: 40px;
       height: 1px;
-      background: rgba($color-main, 0.4);
+      background: rgba($clr-main, 0.4);
       transition:
         width 0.3s ease,
         background 0.3s ease;

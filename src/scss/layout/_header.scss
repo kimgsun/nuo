@@ -12,24 +12,24 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: $sp-md $sp-xl;
-  border-bottom: 1px solid rgba($color-main, 0.05);
+  border-bottom: 1px solid rgba($clr-main, 0.05);
   background: rgba($white, 0.98);
   backdrop-filter: blur(20px);
-  box-shadow: 0 1px 20px rgba($color-main, 0.08);
+  box-shadow: 0 1px 20px rgba($clr-main, 0.08);
   transition: $trans;
 
   &__logo,
   &__toggle {
     transition: $trans;
     &:hover {
-      color: rgba($color-main, 0.3);
+      color: rgba($clr-main, 0.3);
     }
   }
 
   &__logo {
-    font-size: $fs-2xl;
-    font-weight: 700;
     color: $black;
+    font-size: $fs-title;
+    font-weight: 700;
   }
 
   &__toggle {
@@ -40,8 +40,8 @@ body {
     width: 24px;
     height: 24px;
     padding: $sp-xs;
-    font-size: $fs-2xl;
-    color: $color-main;
+    color: $clr-main;
+    font-size: $fs-title;
     @include m {
       display: flex;
     }
@@ -62,7 +62,7 @@ body {
       left: 0;
       z-index: 1000;
       padding-top: $sp-2xl;
-      background: rgba($color-bg-light, 0.9);
+      background: rgba($clr-bg-light, 0.9);
       backdrop-filter: blur(20px);
       transform: translateY(-100%);
       transition: transform $trans;
@@ -88,14 +88,14 @@ body {
       position: relative;
       padding: $sp-xs $sp-sm;
       padding-bottom: calc(#{$sp-xs} + 2px);
-      font-size: $fs-base;
-      color: rgba($color-main, 0.8);
+      color: rgba($clr-main, 0.8);
+      font-size: $fs-body;
       transition: $trans;
       @include m {
         display: block;
         width: 100%;
         padding: $sp-md $sp-2xl;
-        border-bottom: 1px solid rgba($color-main, 0.05);
+        border-bottom: 1px solid rgba($clr-main, 0.05);
       }
 
       &::after {
@@ -107,7 +107,7 @@ body {
         height: 1.5px;
         transform: scaleX(0);
         transform-origin: left;
-        background: $color-main;
+        background: $clr-main;
         transition: $trans;
         @include m {
           display: none;
@@ -116,7 +116,7 @@ body {
 
       &:hover,
       &.active {
-        color: $color-main;
+        color: $clr-main;
         &::after {
           transform: scaleX(1);
         }

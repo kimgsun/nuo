@@ -14,7 +14,7 @@ async function loadProjectDetail() {
   }
 
   try {
-    const response = await fetch("data/projects.json");
+    const response = await fetch("src/data/projects.json");
     if (!response.ok) throw new Error("프로젝트 데이터를 불러올 수 없습니다");
 
     const allProjects = await response.json();

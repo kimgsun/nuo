@@ -2,9 +2,9 @@
   position: relative;
   padding: $sp-5xl 0 $sp-4xl;
   overflow: hidden;
-  border-top: 1px solid $color-border;
+  border-top: 1px solid $clr-border;
   text-align: center;
-  background: rgba($color-main, 0.02);
+  background: rgba($clr-main, 0.02);
   animation: fadeIn 1s ease-out;
   @include m {
     padding: $sp-3xl 0 $sp-2xl;
@@ -23,8 +23,8 @@
 
   h1 {
     margin-bottom: $sp-xl;
+    color: $clr-main;
     line-height: 1.2;
-    color: $color-main;
     animation: slideUp 0.8s ease-out 0.3s backwards;
     @include m {
       margin-bottom: $sp-lg;
@@ -33,14 +33,14 @@
 
   p {
     margin: 0 auto;
-    font-size: $fs-lg;
+    color: rgba($clr-main, 0.7);
+    font-size: $fs-lead;
     line-height: 1.85;
-    color: rgba($color-main, 0.7);
     animation: slideUp 0.8s ease-out 0.4s backwards;
     @include m {
-      font-size: $fs-base;
+      font-size: $fs-body;
     }
-    @include small-m {
+    @include m {
       padding: 0;
     }
   }
@@ -50,7 +50,7 @@
   position: relative;
   padding: $sp-3xl 0 $sp-5xl;
   overflow: hidden;
-  background: rgba($color-main, 0.02);
+  background: rgba($clr-main, 0.02);
   @include m {
     padding: $sp-xl 0 $sp-4xl;
   }
@@ -87,9 +87,9 @@
       flex: 1;
       padding: $sp-sm 0;
       border: none;
-      font-size: $fs-sm;
+      font-size: $fs-small;
       font-weight: 500;
-      color: rgba($color-main, 0.5);
+      color: rgba($clr-main, 0.5);
       text-transform: uppercase;
       background: none;
       cursor: pointer;
@@ -99,11 +99,11 @@
       }
 
       &:hover {
-        color: $color-main;
+        color: $clr-main;
       }
       &--active {
         font-weight: 700;
-        color: $color-main;
+        color: $clr-main;
         &::after {
           content: "";
           position: absolute;
@@ -111,7 +111,7 @@
           left: 50%;
           width: 20px;
           height: 2px;
-          background: $color-main;
+          background: $clr-main;
           transform: translateX(-50%);
         }
       }
@@ -135,7 +135,7 @@
       gap: $sp-lg;
       row-gap: 80px;
     }
-    @include small-m {
+    @include m {
       grid-template-columns: 1fr;
       gap: $sp-3xl;
     }
@@ -166,7 +166,7 @@
         margin-top: 0;
       }
     }
-    @include small-m {
+    @include m {
       &:nth-child(n) {
         grid-column: 1;
         margin-top: 0;
@@ -177,8 +177,8 @@
       position: relative;
       margin-bottom: $sp-lg;
       overflow: hidden;
-      box-shadow: 0 4px 20px rgba($color-main, 0.08);
-      background: $color-main;
+      box-shadow: 0 4px 20px rgba($clr-main, 0.08);
+      background: $clr-main;
       transition: box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -197,7 +197,7 @@
       transform: translateY(-4px);
 
       figure {
-        box-shadow: 0 12px 40px rgba($color-main, 0.15);
+        box-shadow: 0 12px 40px rgba($clr-main, 0.15);
       }
 
       img {
@@ -207,15 +207,15 @@
 
       .product__meta-line {
         width: 50px;
-        background: rgba($color-main, 0.6);
+        background: rgba($clr-main, 0.6);
       }
 
       h3 {
-        color: $color-main;
+        color: $clr-main;
       }
 
       .product__summary {
-        color: $color-main;
+        color: $clr-main;
       }
     }
   }
@@ -237,11 +237,11 @@
     margin-bottom: $sp-md;
 
     p {
-      font-size: $fs-xs;
-      color: rgba($color-main, 0.5);
+      font-size: $fs-caption;
+      color: rgba($clr-main, 0.5);
       text-transform: uppercase;
       @include m {
-        font-size: $fs-2xs;
+        font-size: $fs-tiny;
       }
     }
   }
@@ -249,7 +249,7 @@
   &__meta-line {
     width: 30px;
     height: 1px;
-    background: rgba($color-main, 0.2);
+    background: rgba($clr-main, 0.2);
     transition:
       width 0.6s cubic-bezier(0.16, 1, 0.3, 1),
       background 0.4s ease;
@@ -257,18 +257,18 @@
 
   &__summary {
     margin-bottom: $sp-sm;
-    font-size: $fs-base;
+    font-size: $fs-body;
     line-height: 1.6;
-    color: rgba($color-main, 0.8);
+    color: rgba($clr-main, 0.8);
     transition: color 0.3s ease;
     @include m {
-      font-size: $fs-sm;
+      font-size: $fs-small;
     }
   }
 
   &__story {
-    font-size: $fs-sm;
+    font-size: $fs-small;
     line-height: 1.6;
-    color: rgba($color-main, 0.5);
+    color: rgba($clr-main, 0.5);
   }
 }

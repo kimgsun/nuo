@@ -1,0 +1,11 @@
+.footer {
+  padding: $sp-xl 0;
+  background: rgba($clr-main, 0.03);
+  text-align: center;
+
+  p {
+    color: rgba($clr-main, 0.6);
+    font-size: $fs-small;
+    font-weight: 300;
+  }
+}

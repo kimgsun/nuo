@@ -1,0 +1,45 @@
+$white: #fff;
+$black: #000;
+$clr-main: #1a1a1a;
+$clr-sub: #2c2c2c;
+$clr-border: #eee;
+$clr-bg-light: #e8e8e8;
+$clr-error: rgba(255, 100, 100, 0.9);
+
+$font-base:
+  "Pretendard",
+  -apple-system,
+  BlinkMacSystemFont,
+  system-ui,
+  sans-serif;
+
+$fs-body: clamp(0.9375rem, 0.8rem + 0.4vw, 1rem);
+$fs-display: clamp(2rem, 4vw + 1rem, 3rem);
+$fs-title-lg: clamp(1.75rem, 2.5vw + 1.25rem, 2.5rem);
+
+$fs-tiny: 0.6rem;
+$fs-caption: 0.75rem;
+$fs-small: 0.85rem;
+$fs-lead: 1.1rem;
+$fs-title-sm: 1.25rem;
+$fs-title: 1.5rem;
+$fs-display-sm: 2.25rem;
+
+$sp-xs: 0.25rem;
+$sp-sm: 0.5rem;
+$sp-md: 1rem;
+$sp-lg: 1.5rem;
+$sp-xl: 2rem;
+$sp-2xl: 3rem;
+$sp-3xl: 4rem;
+$sp-4xl: 6rem;
+$sp-5xl: 8rem;
+
+$bp-mobile-sm: 480px;
+$bp-mobile: 768px;
+$bp-tablet: 1024px;
+$bp-laptop: 1280px;
+
+$inner-width: 1200px;
+$trans: 0.3s ease;
+$trans-slow: 1.2s cubic-bezier(0.4, 0, 0.2, 1);

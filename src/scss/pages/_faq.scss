@@ -2,7 +2,7 @@
   position: relative;
   padding: $sp-5xl 0 $sp-4xl;
   overflow: hidden;
-  border-top: 1px solid $color-border;
+  border-top: 1px solid $clr-border;
   animation: fadeIn 1s ease-out;
   @include m {
     padding: $sp-3xl 0;
@@ -21,7 +21,7 @@
 
   h1 {
     margin-bottom: $sp-lg;
-    color: $color-main;
+    color: $clr-main;
     animation: slideUp 0.8s ease-out 0.2s backwards;
     @include m {
       margin-bottom: $sp-md;
@@ -30,12 +30,12 @@
 
   p {
     margin: 0 auto;
-    font-size: $fs-lg;
+    color: rgba($clr-main, 0.7);
+    font-size: $fs-lead;
     line-height: 1.8;
-    color: rgba($color-main, 0.7);
     animation: faqHeroTextSlide 0.8s ease-out 0.4s backwards;
     @include m {
-      font-size: $fs-base;
+      font-size: $fs-body;
     }
   }
 }
@@ -60,18 +60,18 @@
   }
 
   &__item {
-    border-bottom: 1px solid rgba($color-main, 0.08);
+    border-bottom: 1px solid rgba($clr-main, 0.08);
     transition: background $trans;
     &:first-child {
-      border-top: 1px solid rgba($color-main, 0.08);
+      border-top: 1px solid rgba($clr-main, 0.08);
     }
 
     &:hover {
-      background: rgba($color-main, 0.02);
+      background: rgba($clr-main, 0.02);
     }
 
     &--active {
-      background: rgba($color-main, 0.03);
+      background: rgba($clr-main, 0.03);
     }
 
     dt {
@@ -85,12 +85,12 @@
   &__label {
     flex-shrink: 0;
     min-width: 30px;
-    font-size: $fs-sm;
+    font-size: $fs-small;
     font-weight: 700;
-    color: rgba($color-main, 0.2);
+    color: rgba($clr-main, 0.2);
     @include small-m {
       min-width: 24px;
-      font-size: $fs-xs;
+      font-size: $fs-caption;
     }
   }
 
@@ -101,9 +101,9 @@
     gap: $sp-md;
     padding: $sp-xl $sp-2xl;
     border: none;
-    font-size: $fs-lg;
+    font-size: $fs-lead;
     font-weight: 600;
-    color: $color-main;
+    color: $clr-main;
     text-align: left;
     background: none;
     cursor: pointer;
@@ -111,12 +111,12 @@
     @include m {
       gap: $sp-sm;
       padding: $sp-lg $sp-lg;
-      font-size: $fs-base;
+      font-size: $fs-body;
     }
     @include small-m {
       gap: $sp-xs;
       padding: $sp-md $sp-md;
-      font-size: $fs-sm;
+      font-size: $fs-small;
     }
 
     span:not(.faq__label):not(.faq__icon) {
@@ -125,7 +125,7 @@
     }
 
     &:hover {
-      color: rgba($color-main, 0.6);
+      color: rgba($clr-main, 0.6);
     }
   }
 
@@ -145,15 +145,15 @@
 
     &::before {
       content: "+";
-      font-size: $fs-xl;
+      font-size: $fs-title-sm;
       font-weight: 300;
       line-height: 1;
-      color: $color-main;
+      color: $clr-main;
       transition: transform $trans;
     }
     @include small-m {
       &::before {
-        font-size: $fs-lg;
+        font-size: $fs-lead;
       }
     }
 
@@ -197,17 +197,17 @@
     p {
       flex: 1;
       min-width: 0;
-      font-size: $fs-base;
+      font-size: $fs-body;
       line-height: 1.85;
-      color: rgba($color-main, 0.8);
+      color: rgba($clr-main, 0.8);
       word-break: keep-all;
       overflow-wrap: break-word;
       @include m {
-        font-size: $fs-sm;
+        font-size: $fs-small;
         line-height: 1.8;
       }
       @include small-m {
-        font-size: $fs-xs;
+        font-size: $fs-caption;
         line-height: 1.75;
       }
     }
@@ -218,7 +218,7 @@
   position: relative;
   @include section-padding;
   overflow: hidden;
-  background: $color-main;
+  background: $clr-main;
   color: $white;
 
   &::before {
@@ -256,12 +256,12 @@
 
       span,
       a {
-        font-size: $fs-sm;
+        font-size: $fs-small;
         line-height: 1.6;
         color: rgba($white, 0.8);
       }
 
-      .common-label {
+      .section-label {
         font-weight: 700;
         color: rgba($white, 0.3);
       }

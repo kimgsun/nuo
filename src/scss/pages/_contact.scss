@@ -3,7 +3,7 @@
   padding: $sp-4xl 0;
   overflow: hidden;
   border-top: 1px solid rgba($white, 0.1);
-  background: $color-main;
+  background: $clr-main;
   color: $white;
   animation: fadeIn 1s ease-out;
   @include m {
@@ -37,12 +37,12 @@
 
   &__intro {
     margin-bottom: $sp-4xl;
-    font-size: $fs-base;
+    font-size: $fs-body;
     line-height: 1.8;
     color: rgba($white, 0.8);
     @include m {
       margin-bottom: $sp-3xl;
-      font-size: $fs-sm;
+      font-size: $fs-small;
     }
   }
 
@@ -59,10 +59,10 @@
     }
 
     > div > div {
-      font-size: $fs-base;
+      font-size: $fs-body;
       line-height: 1.7;
       @include m {
-        font-size: $fs-sm;
+        font-size: $fs-small;
       }
     }
 
@@ -80,7 +80,7 @@
   &__info-label {
     display: block;
     margin-bottom: $sp-sm;
-    font-size: $fs-xs;
+    font-size: $fs-caption;
     font-weight: 600;
     color: rgba($white, 0.4);
     text-transform: uppercase;
@@ -103,7 +103,7 @@
     label {
       display: block;
       margin-bottom: $sp-sm;
-      font-size: $fs-xs;
+      font-size: $fs-caption;
       font-weight: 600;
       color: rgba($white, 0.7);
       text-transform: uppercase;
@@ -116,14 +116,14 @@
 
       input:not([type="checkbox"]),
       textarea {
-        border-color: rgba($color-error, 0.6);
-        background: rgba($color-error, 0.05);
+        border-color: rgba($clr-error, 0.6);
+        background: rgba($clr-error, 0.05);
       }
 
       input:not([type="checkbox"]):focus,
       textarea:focus {
-        border-color: rgba($color-error, 0.8);
-        background: rgba($color-error, 0.08);
+        border-color: rgba($clr-error, 0.8);
+        background: rgba($clr-error, 0.08);
       }
     }
   }
@@ -144,7 +144,7 @@
     legend {
       display: block;
       margin-bottom: $sp-sm;
-      font-size: $fs-xs;
+      font-size: $fs-caption;
       font-weight: 600;
       color: rgba($white, 0.7);
       text-transform: uppercase;
@@ -152,15 +152,15 @@
   }
 
   .required {
-    color: $color-error;
+    color: $clr-error;
   }
 
   &__error {
     display: none;
     margin-top: $sp-xs;
-    font-size: $fs-xs;
+    font-size: $fs-caption;
     font-weight: 500;
-    color: $color-error;
+    color: $clr-error;
   }
 
   input:not([type="checkbox"]),
@@ -169,13 +169,13 @@
     padding: $sp-md $sp-lg;
     border: 1px solid rgba($white, 0.1);
     font-family: $font-base;
-    font-size: $fs-base;
+    font-size: $fs-body;
     color: $white;
     background: rgba($white, 0.1);
     transition: $trans;
     @include m {
       padding: $sp-sm $sp-md;
-      font-size: $fs-sm;
+      font-size: $fs-small;
     }
 
     &::placeholder {
@@ -191,8 +191,8 @@
 
   input:not([type="checkbox"]).form__input--error,
   textarea.form__input--error {
-    border-color: rgba($color-error, 0.6);
-    background: rgba($color-error, 0.05);
+    border-color: rgba($clr-error, 0.6);
+    background: rgba($clr-error, 0.05);
   }
 
   textarea {
@@ -217,13 +217,13 @@
       gap: $sp-sm;
       padding: $sp-md;
       border: 1px solid rgba($white, 0.1);
-      font-size: $fs-sm;
+      font-size: $fs-small;
       color: rgba($white, 0.6);
       background: rgba($white, 0.03);
       cursor: pointer;
       transition: $trans;
       @include m {
-        font-size: $fs-xs;
+        font-size: $fs-caption;
       }
 
       input[type="checkbox"] {
@@ -247,7 +247,7 @@
 
         &::before {
           background: $white;
-          box-shadow: 0 0 0 2px rgba($color-main, 0.8) inset;
+          box-shadow: 0 0 0 2px rgba($clr-main, 0.8) inset;
         }
       }
 
@@ -267,9 +267,9 @@
     gap: $sp-sm;
     padding: $sp-md;
     border: none;
-    font-size: $fs-sm;
+    font-size: $fs-small;
     font-weight: 700;
-    color: $color-main;
+    color: $clr-main;
     text-transform: uppercase;
     background: $white;
     cursor: pointer;
