@@ -25,7 +25,7 @@
 | **역할**       | 기획 100% · 디자인 100% · 퍼블리싱 100% (1인 작업)                         |
 | **결과물**     | 반응형 정적 웹사이트 6페이지 (index, about, product, detail, faq, contact) |
 | **기술 스택**  | HTML5, SCSS, JavaScript (ES6)                                              |
-| **특징**       | Mobile First, 시맨틱 마크업, SCSS 모듈화, BEM 간소화                       |
+| **특징**       | Desktop First, 시맨틱 마크업, SCSS 모듈화, BEM 간소화                      |
 
 ## Brand Context
 
@@ -81,7 +81,7 @@ Nuovo는 익숙한 일상을 새 시선으로 보는 감각, Nude는 재료 본�
 ### 레이아웃
 
 - Container Max Width: `1200px`
-- Breakpoints: Mobile `< 480px` / Tablet `< 768px` / Desktop `< 1024px`
+- Breakpoints(반응형 5단계): Small Mobile `< 480` / Mobile `480~767` / Tablet `768~1023` / Laptop `1024~1279` / Desktop `1280~`
 - Spacing: XS 0.25rem ~ 5XL 8rem
 
 ## Scope & Deliverables
@@ -108,11 +108,11 @@ Nuovo는 익숙한 일상을 새 시선으로 보는 감각, Nude는 재료 본�
 
 - **HTML**: 시맨틱 태그 우선, 불필요한 래퍼 div 지양, alt·aria-label·aria-expanded 등 접근성 필수.
 - **SCSS**: abstracts / layout / components / pages 모듈화, BEM 간소화(visual\_\_box 수준), 변수·Mixin으로 중복 최소화, 미디어 쿼리 단축(@include t/m/d), 속성 순서(레이아웃 → 박스모델 → 시각효과 → 기타).
-- **JS**: ES6, Vanilla 중심, FAQ 아코디언용 jQuery, 실시간 폼 검증(FormValidator), 페이지별 모듈 분리.
+- **JS**: ES6, Vanilla 중심. 스크롤 애니메이션만 jQuery, FAQ 아코디언·폼 검증(FormValidator) 등은 Vanilla, 페이지별 모듈 분리.
 
 ### 퍼블리싱 포인트
 
-- **Responsive**: PC(1024px 이상)·Tablet(768px~1023px)·Mobile(480px 미만) 해상도별 미디어 쿼리(@include d/t/m) 대응.
+- **Responsive**: 반응형 5단계(Small Mobile &lt;480 / Mobile 480~767 / Tablet 768~1023 / Laptop 1024~1279 / Desktop 1280~), @include small-m, m, t, l (Desktop First).
 - **Key Function**: JSON 기반 프로젝트 필터·동적 상세 렌더링, FormValidator 실시간 폼 검증·전화 포맷, Philosophy 탭 aria-selected·slideUpText 애니메이션, 이미지 grayscale 호버 전환.
 - **Web Standard**: 시맨틱 태그 활용, ARIA 속성·alt 필수, Chrome/Firefox/Safari/Edge 최신 버전 대상.
 
@@ -121,7 +121,7 @@ Nuovo는 익숙한 일상을 새 시선으로 보는 감각, Nude는 재료 본�
 - 이미지: 기본 grayscale 100%, 호버 시 컬러, 트랜지션 0.3s~0.8s.
 - 프로젝트 필터: 전체/주거/상업/공간 디자인, Fade in·out.
 - 폼: 이메일·전화번호 실시간 검증·포맷, 에러 메시지 동적 표시.
-- 반응형: Mobile First, Fluid Grid, 브레이크포인트별 최적화.
+- 반응형: Desktop First, Fluid Grid, 브레이크포인트별 최적화.
 
 ## File Structure
 

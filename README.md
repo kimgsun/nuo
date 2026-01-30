@@ -103,7 +103,7 @@ nuo/
 
 | 항목             | 내용                                                                                                                                        |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Responsive**   | PC(1024px 이상)·Tablet(768px~1023px)·Mobile(480px 미만) 해상도별 미디어 쿼리 대응                                                           |
+| **Responsive**   | 반응형 5단계: Small Mobile(<480)·Mobile(480~767)·Tablet(768~1023)·Laptop(1024~1279)·Desktop(1280~) @include small-m, m, t, l                |
 | **Key Function** | JSON 기반 프로젝트 필터·동적 상세 렌더링, FormValidator 실시간 폼 검증, Philosophy 탭 aria-selected·slideUpText, 이미지 grayscale 호버 전환 |
 | **Web Standard** | 시맨틱 태그, ARIA·alt 필수, Chrome/Firefox/Safari/Edge 최신 버전 대상                                                                       |
 
@@ -199,9 +199,10 @@ $fs-2xs: 0.6rem;   // Caption 소
 ### 반응형 브레이크포인트
 
 ```scss
-$mobile: 480px; // @include m
-$tablet: 768px; // @include t
-$desktop: 1024px; // @include d
+$small-mobile: 480px; // @include small-m (<480)
+$mobile: 768px; // @include m (≤767)
+$tablet: 1024px; // @include t (≤1023)
+$laptop: 1280px; // @include l (≤1279). 1280~ = Desktop(기본)
 ```
 
 <br/>
@@ -240,13 +241,15 @@ $desktop: 1024px; // @include d
 
 <br/>
 
-## 📱 반응형 지원
+## 📱 반응형 지원 (5단계)
 
-| Device     | Breakpoint    | Layout          |
-| ---------- | ------------- | --------------- |
-| 📱 Mobile  | < 480px       | Single Column   |
-| 📱 Tablet  | 480px ~ 767px | 2 Column Grid   |
-| 💻 Desktop | ≥ 768px       | Asymmetric Grid |
+| Device       | Breakpoint      |
+| ------------ | --------------- |
+| Small Mobile | < 480px         |
+| Mobile       | 480px ~ 767px   |
+| Tablet       | 768px ~ 1023px  |
+| Laptop       | 1024px ~ 1279px |
+| Desktop      | 1280px ~        |
 
 <br/>
 

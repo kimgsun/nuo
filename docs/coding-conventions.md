@@ -39,13 +39,13 @@ BEM, 속성 순서, SCSS, HTML 적용 규칙 — 요약 정리.
 
 - **컬러**: `$color-main`, `$color-sub`, `$white`, `$black`, `$color-border`, `$color-bg-light`, `$color-error`
 - **타이포**: `$font-base`, `$fs-xs` ~ `$fs-5xl`
-- **간격·브레이크**: `$sp-xs` ~ `$sp-5xl`, `$mobile`, `$tablet`, `$desktop`, `$inner-width`
+- **간격·브레이크**: `$sp-xs` ~ `$sp-5xl`, `$small-mobile`, `$mobile`, `$tablet`, `$laptop`, `$inner-width`
 - **트랜지션**: `$trans`(0.3s ease), `$trans-slow`(1.2s cubic-bezier)
 - **원칙**: 재사용 가능한 값은 변수 정의. 단 1곳 사용 특수값은 직접 기입 허용
 
-### Mixin
+### Mixin (반응형 5단계)
 
-- **미디어 쿼리**: `@include m`(mobile), `@include t`(tablet), `@include d`(desktop) — max-width 기준 Desktop First
+- **미디어 쿼리**: `@include small-m`(<480), `@include m`(≤767), `@include t`(≤1023), `@include l`(≤1279). 1280~ = Desktop(기본). max-width 기준 Desktop First
 - **호버**: `@include hover { ... }` — `@media (hover: hover)` 대신 사용
 - **레이아웃**: `flex-center`, `flex-between`
 - **도메인**: `section-padding`, `section-header`, `img-grayscale`, `hover`, `bg-overlay`, `tab-panel`, `tab-panel-item`, `grid-bg`, `grid-bg-white`
