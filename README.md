@@ -6,7 +6,7 @@
 
 **정제된 형태와 섬세한 감각이 만나는 공간 디자인 스튜디오**
 
-[Brand Guide](./docs/brand-guide.md) · [Coding Conventions](./docs/coding-conventions.md) · [Live View](https://kimgsun.github.io/nuo/)
+[Brand Guide](./docs/brand-guide.md) · [Live View](https://kimgsun.github.io/nuo/)
 
 </div>
 
@@ -25,9 +25,9 @@
 - 🎨 **모노크롬 인터랙션** - 그레이스케일 기본, 호버 시 컬러 전환
 - ✨ **스크롤 애니메이션** - jQuery 기반 fade-up/down/left/right, zoom 애니메이션
 - 🔍 **프로젝트 필터링** - 카테고리별 동적 필터링 및 페이드 애니메이션
-- 📝 **실시간 폼 검증** - 이메일/전화번호 자동 포맷 및 실시간 에러 표시
+- 📝 **실시간 폼 검증** - 이메일/전화번호 자동 포맷, 에러는 alert로 표시
 - 🖼️ **동적 프로젝트 렌더링** - JSON 기반 데이터 구조
-- 📱 **완전 반응형** - Desktop First, max-width 미디어 쿼리
+- 📱 **완전 반응형** - Desktop First, @include m/t/d mixin 사용
 - ♿ **웹 접근성** - ARIA 속성, 시맨틱 마크업 준수
 
 <br/>
@@ -57,17 +57,17 @@
 
 ```
 nuo/
-├── index.html                 # 메인 페이지
-├── about.html                 # 스튜디오 소개
-├── product.html               # 프로젝트 아카이브
-├── detail.html                # 프로젝트 상세
-├── faq.html                   # FAQ
-├── contact.html               # 문의 폼
+├── index.html                   # 메인 페이지
+├── about.html                   # 스튜디오 소개
+├── product.html                 # 프로젝트 아카이브
+├── detail.html                  # 프로젝트 상세
+├── faq.html                     # FAQ
+├── contact.html                 # 문의 폼
 ├── README.md
 ├── docs/
-│   ├── brand-guide.md         # 기획서
-│   ├── coding-conventions.md  # 코딩 컨벤션
-│   └── accessibility-report.md # 접근성 리포트
+│   ├── brand-guide.md           # 기획·디자인 가이드
+│   ├── coding-conventions.md    # 코딩 컨벤션
+│   └── accessibility-report.md  # 접근성 리포트
 │
 ├── css/
 │   └── main.css               # 컴파일된 CSS
@@ -88,14 +88,13 @@ nuo/
 │   │   ├── contact.js         # 폼 검증
 │   │   └── faq.js             # 아코디언
 │   └── utils/
-│       ├── form-validator.js  # 검증 유틸리티
-│       └── scroll-animation.js # 스크롤 애니메이션
+│       └── form-validator.js  # 폼 검증 유틸리티
 │
 ├── data/
 │   └── projects.json         # 프로젝트 데이터
 │
 └── image/
-    └── favicon.png           # 파비콘
+    └── favicon.png            # 파비콘
 ```
 
 <br/>
@@ -124,10 +123,10 @@ nuo/
 ### 2️⃣ 이미지 인터랙션
 
 ```scss
-// 그레이스케일 → 컬러 호버 효과
-filter: grayscale(100%);
-&:hover {
-  filter: grayscale(0%);
+// @include hover 사용 (hover: hover 미디어 쿼리 통일)
+@include img-grayscale;
+@include hover {
+  transform: scale(1.05);
 }
 ```
 
@@ -135,10 +134,8 @@ filter: grayscale(100%);
 
 ```javascript
 // FormValidator 클래스
-- validateEmail()
-- validateRequired()
-- formatPhone()
-- 실시간 에러 표시
+- validateEmail() / validateRequired() / formatPhone()
+- 실시간 에러 클래스 표시, 제출 시 검증 실패·성공 메시지는 alert
 ```
 
 ### 4️⃣ 탭 전환 (about.html, index.html)
@@ -151,13 +148,12 @@ filter: grayscale(100%);
 - CSS 애니메이션 (slideUpText)
 ```
 
-### 5️⃣ 스크롤 애니메이션
+### 5️⃣ 스크롤 애니메이션 (common.js)
 
 ```javascript
-// jQuery 기반 Intersection 감지
-- fade-up/down/left/right, zoom-in/out 지원
-- data-scroll-animate, data-scroll-delay 속성
-- 동적 생성 요소 자동 감지
+// jQuery 기반 스크롤 감지
+- data-scroll-animate (fade-up/down/left/right, zoom-in/out, fade)
+- data-scroll-delay(ms), window.refreshScrollAnimations()로 동적 요소 반영
 ```
 
 ```html
@@ -188,14 +184,16 @@ $color-error: rgba(255, 100, 100, 0.9); // 에러
 Font Family: "Pretendard"
 Weights: 200 / 400 / 500 / 600 / 700 / 800
 
-$fs-5xl: 3rem;      // Hero Title
-$fs-3xl: 1.875rem;  // Section Title
-$fs-2xl: 1.5rem;    // Sub Title
-$fs-xl: 1.25rem;    // Emphasis
-$fs-lg: 1.125rem;   // Large Body
-$fs-base: 1rem;     // Body
-$fs-sm: 0.875rem;   // Caption
-$fs-xs: 0.75rem;    // Label
+$fs-5xl: 3rem;     // Hero Title
+$fs-4xl: 2.25rem;  // Title
+$fs-3xl: 1.85rem;  // Section Title
+$fs-2xl: 1.5rem;   // Sub Title
+$fs-xl: 1.25rem;   // Emphasis
+$fs-lg: 1.1rem;    // Large Body
+$fs-base: 1rem;    // Body
+$fs-sm: 0.85rem;   // Caption
+$fs-xs: 0.75rem;   // Label
+$fs-2xs: 0.6rem;   // Caption 소
 ```
 
 ### 반응형 브레이크포인트
@@ -205,51 +203,6 @@ $mobile: 480px; // @include m
 $tablet: 768px; // @include t
 $desktop: 1024px; // @include d
 ```
-
-<br/>
-
-## 🚀 시작하기
-
-**필요 환경**
-
-- Node.js(권장) 또는 Python 3 — 로컬 서버 실행용
-- Sass CLI — SCSS 컴파일용 (`npm install -g sass` 또는 `dart-sass`)
-
-### 1️⃣ Clone Repository
-
-```bash
-git clone https://github.com/kimgsun/nuo.git
-cd nuo
-```
-
-### 2️⃣ SCSS 컴파일
-
-```bash
-# Watch mode (개발)
-sass --watch scss/main.scss:css/main.css
-
-# Build (배포)
-sass scss/main.scss:css/main.css --style compressed
-```
-
-### 3️⃣ 로컬 서버 실행
-
-```bash
-# Python
-python -m http.server 8000
-
-# Node.js
-npx http-server -p 8000
-
-# 브라우저에서 http://localhost:8000 접속
-```
-
-### 4️⃣ GitHub Pages로 배포 (선택)
-
-1. 레포지토리 **Settings** → **Pages**
-2. Source: **Deploy from a branch**
-3. Branch: `main` (또는 기본 브랜치) / Folder: **/ (root)**
-4. 루트의 `index.html`이 메인 페이지로 서빙됩니다.
 
 <br/>
 
@@ -332,8 +285,8 @@ npx http-server -p 8000
 
 ## 🔗 Live View / Repository
 
-| 구분           | 링크                            |
-| -------------- | ------------------------------- |
+| 구분           | 링크                           |
+| -------------- | ------------------------------ |
 | **Live View**  | https://kimgsun.github.io/nuo/ |
 | **Repository** | https://github.com/kimgsun/nuo |
 
@@ -345,7 +298,7 @@ npx http-server -p 8000
 
 ---
 
-<br>
+<br/>
 
 <div align="center">
 
