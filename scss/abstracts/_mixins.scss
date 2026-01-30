@@ -1,3 +1,8 @@
+@mixin small-m {
+  @media (max-width: #{$small-mobile - 1px}) {
+    @content;
+  }
+}
 @mixin m {
   @media (max-width: #{$mobile - 1px}) {
     @content;
@@ -8,8 +13,8 @@
     @content;
   }
 }
-@mixin d {
-  @media (max-width: #{$desktop - 1px}) {
+@mixin l {
+  @media (max-width: #{$laptop - 1px}) {
     @content;
   }
 }
@@ -38,7 +43,7 @@
 
 @mixin section-padding {
   padding: $sp-5xl 0;
-  @include t {
+  @include m {
     padding: $sp-4xl 0;
   }
 }

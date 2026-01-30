@@ -36,7 +36,7 @@
     padding: $sp-xs;
     font-size: $fs-2xl;
     color: $color-main;
-    @include t {
+    @include m {
       display: flex;
     }
 
@@ -49,7 +49,7 @@
   }
 
   &__nav {
-    @include t {
+    @include m {
       position: fixed;
       top: 0;
       right: 0;
@@ -63,7 +63,7 @@
     }
 
     &--open {
-      @include t {
+      @include m {
         transform: translateY(0);
       }
     }
@@ -71,7 +71,7 @@
     ul {
       display: flex;
       gap: $sp-xl;
-      @include t {
+      @include m {
         flex-direction: column;
         width: 100%;
         gap: 0;
@@ -85,7 +85,7 @@
       font-size: $fs-base;
       color: rgba($color-main, 0.8);
       transition: $trans;
-      @include t {
+      @include m {
         display: block;
         width: 100%;
         padding: $sp-md $sp-2xl;
@@ -103,7 +103,7 @@
         transform-origin: left;
         background: $color-main;
         transition: $trans;
-        @include t {
+        @include m {
           display: none;
         }
       }
@@ -114,7 +114,7 @@
         &::after {
           transform: scaleX(1);
         }
-        @include t {
+        @include m {
           background: rgba($white, 0.8);
         }
       }

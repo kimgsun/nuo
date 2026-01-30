@@ -5,7 +5,7 @@
   border-top: 1px solid $color-border;
   background: rgba($color-main, 0.03);
   animation: fadeIn 1s ease-out;
-  @include t {
+  @include m {
     padding: $sp-3xl 0;
   }
 
@@ -23,7 +23,7 @@
     margin-bottom: $sp-3xl;
     line-height: 1.1;
     animation: slideUp 0.8s ease-out 0.2s backwards;
-    @include t {
+    @include m {
       margin-bottom: $sp-xl;
     }
   }
@@ -35,7 +35,7 @@
     padding-top: $sp-xl;
     border-top: 1px solid $color-main;
     animation: projectHeroMetaSlide 0.8s ease-out 0.4s backwards;
-    @include t {
+    @include m {
       grid-template-columns: repeat(2, 1fr);
       gap: $sp-lg;
     }
@@ -48,7 +48,7 @@
       .common-label {
         font-weight: 700;
         color: rgba($color-main, 0.3);
-        @include m {
+        @include small-m {
           margin-bottom: 0;
         }
       }
@@ -82,7 +82,7 @@
       font-size: $fs-base;
       line-height: 1.85;
       color: rgba($color-main, 0.7);
-      @include t {
+      @include m {
         font-size: $fs-sm;
       }
     }
@@ -95,7 +95,7 @@
 
   article {
     margin-bottom: $sp-xl;
-    @include t {
+    @include m {
       margin-bottom: $sp-md;
     }
     &:last-child {
@@ -137,7 +137,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: $sp-3xl;
     counter-reset: section;
-    @include t {
+    @include m {
       grid-template-columns: 1fr;
       gap: $sp-2xl;
     }
@@ -193,7 +193,7 @@
     max-width: 600px;
     margin: 0 auto;
     gap: $sp-xl;
-    @include t {
+    @include m {
       flex-direction: column;
       gap: $sp-md;
     }
@@ -203,7 +203,7 @@
       justify-content: center;
       font-size: $fs-xs;
       font-weight: 700;
-      @include t {
+      @include m {
         width: 100%;
       }
     }

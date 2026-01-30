@@ -5,7 +5,7 @@
   min-height: calc(100vh - 70px);
   overflow: hidden;
   animation: fadeIn 1.2s ease-out;
-  @include t {
+  @include m {
     min-height: auto;
     padding: $sp-5xl 0;
   }
@@ -25,7 +25,7 @@
     grid-template-columns: 0.9fr 1.1fr;
     align-items: center;
     gap: $sp-4xl;
-    @include t {
+    @include m {
       grid-template-columns: 1fr;
       gap: $sp-2xl;
     }
@@ -33,7 +33,7 @@
 
   &__content {
     animation: heroContentSlide 1s ease-out 0.3s backwards;
-    @include t {
+    @include m {
       text-align: center;
     }
   }
@@ -61,7 +61,7 @@
     border: none;
     background: $color-main;
     opacity: 0.2;
-    @include t {
+    @include m {
       margin: $sp-xl auto;
     }
   }
@@ -71,7 +71,7 @@
     font-size: $fs-lg;
     line-height: 1.8;
     color: rgba($color-main, 0.7);
-    @include t {
+    @include m {
       margin: 0 auto $sp-2xl;
       font-size: $fs-base;
     }
@@ -124,7 +124,7 @@
     p {
       font-size: $fs-base;
       color: rgba($color-main, 0.6);
-      @include m {
+      @include small-m {
         & + p {
           margin-top: $sp-md;
         }
@@ -148,14 +148,14 @@
 
   &__tab {
     flex: 1;
-    padding: $sp-md;
+    padding: $sp-md 0;
     border: none;
     font-size: $fs-xs;
     font-weight: 700;
     color: rgba($color-main, 0.4);
     text-transform: uppercase;
     transition: $trans;
-    @include m {
+    @include small-m {
       font-size: $fs-sm;
     }
 
@@ -174,11 +174,19 @@
 
   &__panel {
     @include tab-panel-item;
+
+    @include m {
+      padding: $sp-xl $sp-md;
+    }
+
+    @include small-m {
+      padding: $sp-xl $sp-sm;
+    }
   }
 
   &__panel-text {
     p {
-      @include m {
+      @include small-m {
         font-size: $fs-xs;
       }
     }
@@ -193,7 +201,7 @@
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: $sp-2xl;
-    @include t {
+    @include m {
       flex-direction: column;
       align-items: flex-start;
       gap: $sp-lg;

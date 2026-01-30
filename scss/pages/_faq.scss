@@ -4,7 +4,7 @@
   overflow: hidden;
   border-top: 1px solid $color-border;
   animation: fadeIn 1s ease-out;
-  @include t {
+  @include m {
     padding: $sp-3xl 0;
   }
 
@@ -23,7 +23,7 @@
     margin-bottom: $sp-lg;
     color: $color-main;
     animation: slideUp 0.8s ease-out 0.2s backwards;
-    @include t {
+    @include m {
       margin-bottom: $sp-md;
     }
   }
@@ -34,7 +34,7 @@
     line-height: 1.8;
     color: rgba($color-main, 0.7);
     animation: faqHeroTextSlide 0.8s ease-out 0.4s backwards;
-    @include t {
+    @include m {
       font-size: $fs-base;
     }
   }
@@ -54,6 +54,9 @@
     z-index: 1;
     max-width: 900px;
     margin: 0 auto;
+    @include m {
+      max-width: 100%;
+    }
   }
 
   &__item {
@@ -80,10 +83,15 @@
   }
 
   &__label {
+    flex-shrink: 0;
     min-width: 30px;
     font-size: $fs-sm;
     font-weight: 700;
     color: rgba($color-main, 0.2);
+    @include small-m {
+      min-width: 24px;
+      font-size: $fs-xs;
+    }
   }
 
   &__q {
@@ -100,16 +108,20 @@
     background: none;
     cursor: pointer;
     transition: color $trans;
-    @include t {
-      padding: $sp-lg 0;
+    @include m {
+      gap: $sp-sm;
+      padding: $sp-lg $sp-lg;
       font-size: $fs-base;
     }
-    @include m {
-      padding: $sp-sm $sp-xl;
+    @include small-m {
+      gap: $sp-xs;
+      padding: $sp-md $sp-md;
+      font-size: $fs-sm;
     }
 
     span:not(.faq__label):not(.faq__icon) {
       flex: 1;
+      min-width: 0;
     }
 
     &:hover {
@@ -126,6 +138,10 @@
     width: 20px;
     height: 20px;
     margin-left: auto;
+    @include small-m {
+      width: 18px;
+      height: 18px;
+    }
 
     &::before {
       content: "+";
@@ -134,6 +150,11 @@
       line-height: 1;
       color: $color-main;
       transition: transform $trans;
+    }
+    @include small-m {
+      &::before {
+        font-size: $fs-lg;
+      }
     }
 
     .faq__item--active &::before {
@@ -157,17 +178,31 @@
       max-height: 600px;
       padding: $sp-sm $sp-2xl $sp-xl $sp-2xl;
       opacity: 1;
-      @include t {
-        padding: $sp-sm $sp-lg $sp-xl $sp-xl;
+      @include m {
+        gap: $sp-sm;
+        padding: $sp-sm $sp-lg $sp-lg $sp-lg;
+      }
+      @include small-m {
+        gap: $sp-xs;
+        padding: $sp-sm $sp-md $sp-md $sp-md;
       }
     }
 
     p {
+      flex: 1;
+      min-width: 0;
       font-size: $fs-base;
       line-height: 1.85;
       color: rgba($color-main, 0.8);
-      @include t {
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      @include m {
         font-size: $fs-sm;
+        line-height: 1.8;
+      }
+      @include small-m {
+        font-size: $fs-xs;
+        line-height: 1.75;
       }
     }
   }
@@ -202,7 +237,7 @@
     gap: $sp-3xl;
     padding-top: $sp-2xl;
     border-top: 1px solid rgba($white, 0.1);
-    @include t {
+    @include m {
       grid-template-columns: 1fr;
       gap: $sp-lg;
     }

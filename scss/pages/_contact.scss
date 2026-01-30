@@ -6,7 +6,7 @@
   background: $color-main;
   color: $white;
   animation: fadeIn 1s ease-out;
-  @include t {
+  @include m {
     padding: $sp-2xl 0;
   }
 
@@ -26,7 +26,7 @@
     margin-bottom: $sp-xl;
     line-height: 1.3;
     color: $white;
-    @include t {
+    @include m {
       margin-bottom: $sp-lg;
     }
 
@@ -40,7 +40,7 @@
     font-size: $fs-base;
     line-height: 1.8;
     color: rgba($white, 0.8);
-    @include t {
+    @include m {
       margin-bottom: $sp-3xl;
       font-size: $fs-sm;
     }
@@ -52,7 +52,7 @@
     gap: $sp-2xl;
     margin-bottom: $sp-4xl;
     text-align: left;
-    @include t {
+    @include m {
       grid-template-columns: 1fr;
       margin-bottom: $sp-3xl;
       gap: $sp-xl;
@@ -61,7 +61,7 @@
     > div > div {
       font-size: $fs-base;
       line-height: 1.7;
-      @include t {
+      @include m {
         font-size: $fs-sm;
       }
     }
@@ -92,7 +92,7 @@
   border: 1px solid rgba($white, 0.1);
   text-align: left;
   background: rgba($white, 0.05);
-  @include t {
+  @include m {
     padding: $sp-xl;
   }
 
@@ -133,7 +133,7 @@
     margin-bottom: $sp-2xl;
     padding: 0;
     border: none;
-    @include m {
+    @include small-m {
       margin-bottom: 0;
     }
 
@@ -173,7 +173,7 @@
     color: $white;
     background: rgba($white, 0.1);
     transition: $trans;
-    @include t {
+    @include m {
       padding: $sp-sm $sp-md;
       font-size: $fs-sm;
     }
@@ -204,7 +204,7 @@
   &__radio {
     display: flex;
     gap: $sp-lg;
-    @include t {
+    @include m {
       flex-direction: column;
       gap: $sp-md;
     }
@@ -222,7 +222,7 @@
       background: rgba($white, 0.03);
       cursor: pointer;
       transition: $trans;
-      @include t {
+      @include m {
         font-size: $fs-xs;
       }
 

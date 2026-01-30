@@ -10,7 +10,7 @@
   white-space: nowrap;
   background: transparent;
   transition: $trans;
-  @include t { padding: $sp-xs $sp-md; }
+  @include m { padding: $sp-xs $sp-md; }
 
   &:hover {
     transform: translateX(4px);
@@ -38,7 +38,7 @@
   font-size: $fs-lg;
   color: $white;
   transition: $trans;
-  @include t { font-size: $fs-sm; }
+  @include m { font-size: $fs-sm; }
 
   &::after { content: "→"; }
   &:hover {

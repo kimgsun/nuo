@@ -5,7 +5,7 @@
   min-height: calc(100vh - 70px);
   overflow: hidden;
   animation: fadeIn 1.2s ease-out;
-  @include t {
+  @include m {
     min-height: auto;
     padding: $sp-5xl 0;
   }
@@ -43,7 +43,7 @@
   &__content {
     color: $white;
     animation: slideUp 1s ease-out 0.3s backwards;
-    @include t {
+    @include m {
       text-align: center;
     }
   }
@@ -51,7 +51,7 @@
   .common-label {
     margin-bottom: $sp-lg;
     color: rgba($white, 0.7);
-    @include t {
+    @include m {
       margin-bottom: $sp-md;
     }
   }
@@ -60,7 +60,7 @@
     margin-bottom: $sp-xl;
     line-height: 1.2;
     color: $white;
-    @include t {
+    @include m {
       margin-bottom: $sp-lg;
     }
   }
@@ -69,7 +69,7 @@
     font-size: $fs-lg;
     line-height: 1.85;
     color: rgba($white, 0.9);
-    @include t {
+    @include m {
       font-size: $fs-base;
     }
 
@@ -88,24 +88,26 @@
     display: flex;
     align-items: center;
     gap: $sp-4xl;
-    @include t {
+    min-width: 0;
+    @include m {
       flex-direction: column;
     }
   }
 
   &__left {
     flex: 1;
+    min-width: 0;
 
     header {
       margin-bottom: $sp-3xl;
-      @include t {
+      @include m {
         text-align: center;
       }
     }
   }
 
   &__text {
-    @include t {
+    @include m {
       text-align: center;
     }
 
@@ -114,7 +116,7 @@
       font-size: $fs-base;
       line-height: 1.8;
       color: rgba($color-main, 0.7);
-      @include t {
+      @include m {
         font-size: $fs-sm;
       }
     }
@@ -126,18 +128,21 @@
     font-weight: 500;
     line-height: 1.7;
     color: $color-main;
-    @include t {
+    @include m {
       font-size: $fs-lg;
     }
   }
 
   &__philosophy {
-    flex: 0 0 500px;
+    flex: 1 1 500px;
+    min-width: 0;
+    max-width: 500px;
     padding: $sp-xl $sp-lg;
     border: 1px solid $color-border;
     background: $white;
-    @include t {
+    @include m {
       flex: 1;
+      max-width: none;
       width: 100%;
     }
   }
@@ -158,8 +163,9 @@
     text-transform: uppercase;
     background: transparent;
     cursor: pointer;
-    @include m {
+    @include small-m {
       font-size: $fs-sm;
+      padding: $sp-xs $sp-md;
     }
 
     &--active {
@@ -188,7 +194,7 @@
 
   &__panel-text {
     p {
-      @include m {
+      @include small-m {
         font-size: $fs-xs;
       }
     }
@@ -214,7 +220,7 @@
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    @include t {
+    @include m {
       grid-template-columns: 1fr;
       gap: $sp-2xl;
     }
@@ -223,7 +229,7 @@
       position: relative;
       padding: 0 $sp-xl;
       text-align: center;
-      @include m {
+      @include small-m {
         padding: 0;
       }
 
@@ -235,7 +241,7 @@
         bottom: 0;
         width: 1px;
         background: $color-border;
-        @include t {
+        @include m {
           display: none;
         }
       }
@@ -275,7 +281,7 @@
     @include section-header;
 
     h2 {
-      @include m {
+      @include small-m {
         margin: $sp-xs 0 $sp-md;
       }
     }
@@ -283,7 +289,7 @@
     p {
       font-size: $fs-base;
       color: rgba($color-main, 0.6);
-      @include m {
+      @include small-m {
         font-size: $fs-sm;
       }
     }
@@ -302,7 +308,7 @@
   &__item {
     position: relative;
     padding-left: $sp-5xl;
-    @include m {
+    @include small-m {
       padding-left: 4rem;
     }
 
@@ -323,7 +329,7 @@
       margin-bottom: $sp-xs;
       font-size: $fs-xl;
       font-weight: 700;
-      @include t {
+      @include m {
         font-size: $fs-lg;
       }
     }
@@ -366,7 +372,7 @@
 
   &__header {
     margin-bottom: $sp-3xl;
-    @include t {
+    @include m {
       text-align: center;
     }
   }
@@ -376,7 +382,7 @@
       display: flex;
       padding: $sp-2xl 0;
       border-top: 1px solid $color-border;
-      @include t {
+      @include m {
         flex-direction: column;
         gap: $sp-sm;
       }
@@ -387,7 +393,7 @@
 
       h3 {
         width: 30%;
-        @include t {
+        @include m {
           width: 100%;
         }
       }

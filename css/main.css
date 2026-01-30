@@ -34,6 +34,7 @@
 }
 
 html {
+  overflow-x: hidden;
   font-size: 16px;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -85,7 +86,7 @@ h1 {
   font-size: 3rem;
   font-weight: 800;
 }
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   h1 {
     font-size: 1.85rem;
   }
@@ -95,7 +96,7 @@ h2 {
   font-size: 1.85rem;
   font-weight: 700;
 }
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   h2 {
     font-size: 1.5rem;
   }
@@ -105,7 +106,7 @@ h3 {
   font-size: 1.25rem;
   font-weight: 700;
 }
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   h3 {
     font-size: 1.1rem;
   }
@@ -375,6 +376,11 @@ ol {
 }
 @media (max-width: 767px) {
   .common-quote {
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 479px) {
+  .common-quote {
     font-size: 1.1rem;
   }
 }
@@ -411,14 +417,6 @@ ol {
     transform: translateY(30px);
   }
 }
-.gallery__item:nth-child(2)[data-scroll-animate].is-animated {
-  transform: translateY(1.5rem);
-}
-@media (max-width: 767px) {
-  .gallery__item:nth-child(2)[data-scroll-animate].is-animated {
-    transform: translateY(0);
-  }
-}
 .gallery__item:hover {
   position: relative;
   z-index: 1;
@@ -434,12 +432,20 @@ ol {
 .gallery__item:hover:nth-child(1), .gallery__item:hover:nth-child(3) {
   transform: translateY(-0.5rem) scale(1.01);
 }
-.gallery__item:hover:nth-child(2) {
-  transform: translateY(calc(1.5rem - 0.5rem)) scale(1.01);
+.gallery__item:nth-child(2) {
+  transform: translateY(1.5rem);
 }
 @media (max-width: 767px) {
-  .gallery__item:hover:nth-child(2) {
-    transform: translateY(-4px) scale(1.005);
+  .gallery__item:nth-child(2) {
+    transform: translateY(0);
+  }
+}
+.gallery__item:nth-child(2)[data-scroll-animate=fade-up] {
+  transform: translateY(calc(1.5rem + 30px));
+}
+@media (max-width: 767px) {
+  .gallery__item:nth-child(2)[data-scroll-animate=fade-up] {
+    transform: translateY(30px);
   }
 }
 .gallery__item figure {
@@ -753,7 +759,7 @@ ol {
 }
 .philosophy__tab {
   flex: 1;
-  padding: 1rem;
+  padding: 1rem 0;
   border: none;
   font-size: 0.75rem;
   font-weight: 700;
@@ -789,6 +795,16 @@ ol {
 .philosophy__panel--active .quote,
 .philosophy__panel--active p {
   animation: slideUpText 0.5s ease forwards;
+}
+@media (max-width: 767px) {
+  .philosophy__panel {
+    padding: 2rem 1rem;
+  }
+}
+@media (max-width: 479px) {
+  .philosophy__panel {
+    padding: 2rem 0.5rem;
+  }
 }
 @media (max-width: 479px) {
   .philosophy__panel-text p {
@@ -947,6 +963,7 @@ ol {
   display: flex;
   align-items: center;
   gap: 6rem;
+  min-width: 0;
 }
 @media (max-width: 767px) {
   .about-origin .container {
@@ -955,6 +972,7 @@ ol {
 }
 .about-origin__left {
   flex: 1;
+  min-width: 0;
 }
 .about-origin__left header {
   margin-bottom: 4rem;
@@ -993,7 +1011,9 @@ ol {
   }
 }
 .about-origin__philosophy {
-  flex: 0 0 500px;
+  flex: 1 1 500px;
+  min-width: 0;
+  max-width: 500px;
   padding: 2rem 1.5rem;
   border: 1px solid #eee;
   background: #fff;
@@ -1001,6 +1021,7 @@ ol {
 @media (max-width: 767px) {
   .about-origin__philosophy {
     flex: 1;
+    max-width: none;
     width: 100%;
   }
 }
@@ -1023,6 +1044,7 @@ ol {
 @media (max-width: 479px) {
   .about-origin__tab {
     font-size: 0.85rem;
+    padding: 0.25rem 1rem;
   }
 }
 .about-origin__tab--active {
@@ -1394,7 +1416,7 @@ ol {
 .product__filter-btn {
   position: relative;
   flex: 1;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 0;
   border: none;
   font-size: 0.85rem;
   font-weight: 500;
@@ -1921,6 +1943,11 @@ ol {
   max-width: 900px;
   margin: 0 auto;
 }
+@media (max-width: 767px) {
+  .faq__list {
+    max-width: 100%;
+  }
+}
 .faq__item {
   border-bottom: 1px solid rgba(26, 26, 26, 0.08);
   transition: background 0.3s ease;
@@ -1941,10 +1968,17 @@ ol {
   margin: 0;
 }
 .faq__label {
+  flex-shrink: 0;
   min-width: 30px;
   font-size: 0.85rem;
   font-weight: 700;
   color: rgba(26, 26, 26, 0.2);
+}
+@media (max-width: 479px) {
+  .faq__label {
+    min-width: 24px;
+    font-size: 0.75rem;
+  }
 }
 .faq__q {
   display: flex;
@@ -1963,17 +1997,21 @@ ol {
 }
 @media (max-width: 767px) {
   .faq__q {
-    padding: 1.5rem 0;
+    gap: 0.5rem;
+    padding: 1.5rem 1.5rem;
     font-size: 1rem;
   }
 }
 @media (max-width: 479px) {
   .faq__q {
-    padding: 0.5rem 2rem;
+    gap: 0.25rem;
+    padding: 1rem 1rem;
+    font-size: 0.85rem;
   }
 }
 .faq__q span:not(.faq__label):not(.faq__icon) {
   flex: 1;
+  min-width: 0;
 }
 .faq__q:hover {
   color: rgba(26, 26, 26, 0.6);
@@ -1988,6 +2026,12 @@ ol {
   height: 20px;
   margin-left: auto;
 }
+@media (max-width: 479px) {
+  .faq__icon {
+    width: 18px;
+    height: 18px;
+  }
+}
 .faq__icon::before {
   content: "+";
   font-size: 1.25rem;
@@ -1995,6 +2039,11 @@ ol {
   line-height: 1;
   color: #1a1a1a;
   transition: transform 0.3s ease;
+}
+@media (max-width: 479px) {
+  .faq__icon::before {
+    font-size: 1.1rem;
+  }
 }
 .faq__item--active .faq__icon::before {
   transform: rotate(45deg);
@@ -2015,17 +2064,35 @@ ol {
 }
 @media (max-width: 767px) {
   .faq__item--active .faq__a {
-    padding: 0.5rem 1.5rem 2rem 2rem;
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+  }
+}
+@media (max-width: 479px) {
+  .faq__item--active .faq__a {
+    gap: 0.25rem;
+    padding: 0.5rem 1rem 1rem 1rem;
   }
 }
 .faq__a p {
+  flex: 1;
+  min-width: 0;
   font-size: 1rem;
   line-height: 1.85;
   color: rgba(26, 26, 26, 0.8);
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 @media (max-width: 767px) {
   .faq__a p {
     font-size: 0.85rem;
+    line-height: 1.8;
+  }
+}
+@media (max-width: 479px) {
+  .faq__a p {
+    font-size: 0.75rem;
+    line-height: 1.75;
   }
 }
 

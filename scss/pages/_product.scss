@@ -6,7 +6,7 @@
   text-align: center;
   background: rgba($color-main, 0.02);
   animation: fadeIn 1s ease-out;
-  @include t {
+  @include m {
     padding: $sp-4xl 0 $sp-2xl;
   }
 
@@ -25,7 +25,7 @@
     margin-bottom: $sp-lg;
     color: rgba($color-main, 0.5);
     animation: slideUp 0.8s ease-out 0.2s backwards;
-    @include t {
+    @include m {
       margin-bottom: $sp-md;
     }
   }
@@ -35,7 +35,7 @@
     line-height: 1.2;
     color: $color-main;
     animation: slideUp 0.8s ease-out 0.3s backwards;
-    @include t {
+    @include m {
       margin-bottom: $sp-lg;
     }
   }
@@ -46,10 +46,10 @@
     line-height: 1.85;
     color: rgba($color-main, 0.7);
     animation: slideUp 0.8s ease-out 0.4s backwards;
-    @include t {
+    @include m {
       font-size: $fs-base;
     }
-    @include m {
+    @include small-m {
       padding: 0;
     }
   }
@@ -60,7 +60,7 @@
   padding: $sp-3xl 0 $sp-5xl;
   overflow: hidden;
   background: rgba($color-main, 0.02);
-  @include t {
+  @include m {
     padding: $sp-xl 0 $sp-4xl;
   }
 
@@ -85,7 +85,7 @@
     margin-bottom: $sp-4xl;
     margin-left: auto;
     gap: $sp-lg;
-    @include t {
+    @include m {
       flex-wrap: wrap;
       margin-bottom: $sp-3xl;
       gap: $sp-sm;
@@ -94,7 +94,7 @@
     &-btn {
       position: relative;
       flex: 1;
-      padding: $sp-sm $sp-lg;
+      padding: $sp-sm 0;
       border: none;
       font-size: $fs-sm;
       font-weight: 500;
@@ -103,7 +103,7 @@
       background: none;
       cursor: pointer;
       transition: $trans;
-      @include t {
+      @include m {
         flex: 1 1 calc(50% - #{$sp-sm / 2});
       }
 
@@ -140,11 +140,11 @@
       opacity: 0;
       transform: translateY(20px);
     }
-    @include t {
+    @include m {
       gap: $sp-lg;
       row-gap: 80px;
     }
-    @include m {
+    @include small-m {
       grid-template-columns: 1fr;
       gap: $sp-3xl;
     }
@@ -161,21 +161,21 @@
     &:nth-child(3n + 2) {
       grid-column: 8 / span 5;
       margin-top: 200px;
-      @include d {
+      @include t {
         margin-top: 100px;
       }
-      @include t {
+      @include m {
         margin-top: 0;
       }
     }
     &:nth-child(3n) {
       grid-column: 3 / span 8;
       margin-top: 50px;
-      @include t {
+      @include m {
         margin-top: 0;
       }
     }
-    @include m {
+    @include small-m {
       &:nth-child(n) {
         grid-column: 1;
         margin-top: 0;
@@ -249,7 +249,7 @@
       font-size: $fs-xs;
       color: rgba($color-main, 0.5);
       text-transform: uppercase;
-      @include t {
+      @include m {
         font-size: $fs-2xs;
       }
     }
@@ -270,7 +270,7 @@
     line-height: 1.6;
     color: rgba($color-main, 0.8);
     transition: color 0.3s ease;
-    @include t {
+    @include m {
       font-size: $fs-sm;
     }
   }
