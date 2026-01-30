@@ -51,38 +51,41 @@ Nuovo는 익숙한 일상을 새 시선으로 보는 감각, Nude는 재료 본�
 
 ### 컬러 팔레트
 
-| 구분  | 컬러명         | HEX                        | 용도          |
-| ----- | -------------- | -------------------------- | ------------- |
-| Main  | Charcoal       | `#1A1A1A`                  | 텍스트, 강조  |
-| Sub   | Charcoal Light | `#2C2C2C`                  | 다크 배경     |
-| Point | White          | `#FFFFFF`                  | 배경, 메인 톤 |
-| Line  | Line           | `#EEEEEE`                  | 구분선        |
-| Gray  | Gray           | `#E8E8E8`                  | 서브 배경     |
-| Error | Error          | `rgba(255, 100, 100, 0.9)` | 폼 검증 에러  |
+| 변수         | HEX                        | 용도          |
+| ------------ | -------------------------- | ------------- |
+| `$white`     | `#fff`                     | 배경, 메인 톤 |
+| `$black`     | `#000`                     | 강조          |
+| `$clr-main`  | `#1a1a1a`                  | 텍스트, 강조  |
+| `$clr-sub`   | `#2c2c2c`                  | 다크 배경     |
+| `$clr-border`| `#eee`                     | 구분선        |
+| `$clr-bg-light` | `#e8e8e8`               | 서브 배경     |
+| `$clr-error` | `rgba(255, 100, 100, 0.9)` | 폼 검증 에러  |
 
 모노크롬 중심. 이미지는 기본 그레이스케일, 호버 시 컬러 전환.
 
 ### 타이포그래피
 
-- Font: `"Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif`
+- Font: `$font-base` → `"Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif`
 - Weights: 200 / 400 / 500 / 600 / 700 / 800
 
-| 스타일  | Size    | Weight | 용도        |
-| ------- | ------- | ------ | ----------- |
-| fs-5xl  | 3rem    | 800    | 메인 타이틀 |
-| fs-3xl  | 1.85rem | 700    | 섹션 타이틀 |
-| fs-2xl  | 1.5rem  | 700    | 서브 타이틀 |
-| fs-lg   | 1.1rem  | 200    | 강조 본문   |
-| fs-base | 1rem    | 400    | 일반 본문   |
-| fs-sm   | 0.85rem | 400    | 캡션        |
-| fs-xs   | 0.75rem | 600    | 라벨        |
-| fs-2xs  | 0.6rem  | 600    | 캡션 소     |
+| 변수          | 값        | 용도        |
+| ------------- | --------- | ----------- |
+| `$fs-display` | clamp(2rem, 4vw+1rem, 3rem) | 메인 타이틀 |
+| `$fs-display-sm` | 2.25rem | 타이틀      |
+| `$fs-title-lg`   | clamp(1.75rem, 2.5vw+1.25rem, 2.5rem) | 섹션 타이틀 |
+| `$fs-title`   | 1.5rem    | 서브 타이틀 |
+| `$fs-title-sm`| 1.25rem   | 강조        |
+| `$fs-lead`    | 1.1rem    | 강조 본문   |
+| `$fs-body`    | clamp(0.9375rem, 0.8rem+0.4vw, 1rem) | 일반 본문 |
+| `$fs-small`   | 0.85rem   | 캡션        |
+| `$fs-caption` | 0.75rem   | 라벨        |
+| `$fs-tiny`    | 0.6rem    | 캡션 소     |
 
 ### 레이아웃
 
-- Container Max Width: `1200px`
-- Breakpoints(반응형 5단계): Small Mobile `< 480` / Mobile `480~767` / Tablet `768~1023` / Laptop `1024~1279` / Desktop `1280~`
-- Spacing: XS 0.25rem ~ 5XL 8rem
+- Container Max Width: `$inner-width` (1200px)
+- Breakpoints(반응형 5단계): `$bp-mobile-sm` 480px / `$bp-mobile` 768px / `$bp-tablet` 1024px / `$bp-laptop` 1280px. 1280~ = Desktop(기본). `@include small-m`, `m`, `t`, `l`
+- Spacing: `$sp-xs` 0.25rem ~ `$sp-5xl` 8rem
 
 ## Scope & Deliverables
 

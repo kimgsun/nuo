@@ -68,4 +68,4 @@ src/
 - **구조**: `header`, `main`, `section`, `article`, `footer`, `nav` 시맨틱 태그 우선
 - **래퍼**: `div.wrapper`, `div.inner` 사용 금지. 넓이 제한은 `.container`(max-width: $inner-width)만 사용. 섹션 라벨·인용은 `.section-label`, `.section-quote` 사용
 - **클래스·id·data**: **kebab-case**(소문자+하이픈) 통일. 예: `hero__grid`, `philosophy-content-nuovo`, `data-category="all"`
-- **애니메이션**: `data-scroll-animate`(타입), `data-scroll-delay`(ms) 속성으로 제어. 타입: fade-up/down/left/right, zoom-in/out, fade
+- **애니메이션**: `data-scroll-animate`(타입), `data-scroll-delay`(ms) 속성으로 제어. 타입: fade-up, fade-left, fade-right, zoom-in

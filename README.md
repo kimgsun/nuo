@@ -23,7 +23,7 @@
 ## ✨ 주요 기능
 
 - 🎨 **모노크롬 인터랙션** - 그레이스케일 기본, 호버 시 컬러 전환
-- ✨ **스크롤 애니메이션** - jQuery 기반 fade-up/down/left/right, zoom 애니메이션
+- ✨ **스크롤 애니메이션** - jQuery 기반 fade-up, fade-left, fade-right, zoom-in 애니메이션
 - 🔍 **프로젝트 필터링** - 카테고리별 동적 필터링 및 페이드 애니메이션
 - 📝 **실시간 폼 검증** - 이메일/전화번호 자동 포맷, 에러는 alert로 표시
 - 🖼️ **동적 프로젝트 렌더링** - JSON 기반 데이터 구조
@@ -148,7 +148,7 @@ nuo/
 
 ```javascript
 // jQuery 기반 스크롤 감지
-- data-scroll-animate (fade-up/down/left/right, zoom-in/out, fade)
+- data-scroll-animate (fade-up, fade-left, fade-right, zoom-in)
 - data-scroll-delay(ms), window.refreshScrollAnimations()로 동적 요소 반영
 ```
 
@@ -167,38 +167,36 @@ nuo/
 ```scss
 $white: #fff; // 배경
 $black: #000; // 강조
-$color-main: #1a1a1a; // 텍스트
-$color-sub: #2c2c2c; // 다크 배경
-$color-border: #eee; // 구분선
-$color-bg-light: #e8e8e8; // 서브 배경
-$color-error: rgba(255, 100, 100, 0.9); // 에러
+$clr-main: #1a1a1a; // 텍스트
+$clr-sub: #2c2c2c; // 다크 배경
+$clr-border: #eee; // 구분선
+$clr-bg-light: #e8e8e8; // 서브 배경
+$clr-error: rgba(255, 100, 100, 0.9); // 에러
 ```
 
 ### 타이포그래피
 
 ```scss
-Font Family: "Pretendard"
-Weights: 200 / 400 / 500 / 600 / 700 / 800
-
-$fs-5xl: 3rem;     // Hero Title
-$fs-4xl: 2.25rem;  // Title
-$fs-3xl: 1.85rem;  // Section Title
-$fs-2xl: 1.5rem;   // Sub Title
-$fs-xl: 1.25rem;   // Emphasis
-$fs-lg: 1.1rem;    // Large Body
-$fs-base: 1rem;    // Body
-$fs-sm: 0.85rem;   // Caption
-$fs-xs: 0.75rem;   // Label
-$fs-2xs: 0.6rem;   // Caption 소
+$font-base: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+$fs-display: clamp(2rem, 4vw + 1rem, 3rem);      // Hero Title
+$fs-display-sm: 2.25rem;                          // Title
+$fs-title-lg: clamp(1.75rem, 2.5vw + 1.25rem, 2.5rem); // Section Title
+$fs-title: 1.5rem;     // Sub Title
+$fs-title-sm: 1.25rem; // Emphasis
+$fs-lead: 1.1rem;      // Large Body
+$fs-body: clamp(0.9375rem, 0.8rem + 0.4vw, 1rem); // Body
+$fs-small: 0.85rem;    // Caption
+$fs-caption: 0.75rem;  // Label
+$fs-tiny: 0.6rem;      // Caption 소
 ```
 
 ### 반응형 브레이크포인트
 
 ```scss
-$small-mobile: 480px; // @include small-m (<480)
-$mobile: 768px; // @include m (<768)
-$tablet: 1024px; // @include t (<1024)
-$laptop: 1280px; // @include l (<1280). 1280~ = Desktop(기본)
+$bp-mobile-sm: 480px; // @include small-m (<480)
+$bp-mobile: 768px; // @include m (<768)
+$bp-tablet: 1024px; // @include t (<1024)
+$bp-laptop: 1280px; // @include l (<1280). 1280~ = Desktop(기본)
 ```
 
 <br/>
