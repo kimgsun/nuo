@@ -80,9 +80,8 @@ nuo/
 │   └── main.scss              # Entry point
 │
 ├── js/
-│   ├── common.js              # 공통 기능 (헤더 토글, 탭 전환)
+│   ├── common.js              # 공통 기능 (헤더 토글, 탭 전환, 스크롤 애니메이션)
 │   ├── pages/
-│   │   ├── about.js           # About 프로세스 라인 진행률
 │   │   ├── product.js         # 프로젝트 필터링
 │   │   ├── detail.js          # 상세 페이지 렌더링
 │   │   ├── contact.js         # 폼 검증

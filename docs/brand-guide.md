@@ -148,7 +148,7 @@ nuo/
 │   └── main.scss
 ├── js/
 │   ├── common.js
-│   ├── pages/       (about, product, detail, contact, faq)
+│   ├── pages/       (product, detail, contact, faq)
 │   └── utils/       (form-validator.js)
 ├── data/
 │   └── projects.json

@@ -6,8 +6,7 @@
   overflow: hidden;
   animation: fadeIn 1.2s ease-out;
   @include m {
-    min-height: auto;
-    padding: $sp-5xl 0;
+    padding: $sp-3xl 0;
   }
 
   &__bg {

@@ -3,31 +3,23 @@
     @content;
   }
 }
+
 @mixin m {
   @media (max-width: #{$mobile - 1px}) {
     @content;
   }
 }
+
 @mixin t {
   @media (max-width: #{$tablet - 1px}) {
     @content;
   }
 }
+
 @mixin l {
   @media (max-width: #{$laptop - 1px}) {
     @content;
   }
-}
-
-@mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-@mixin flex-between {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 @mixin grid-bg($size: 40px, $opacity: 0.05, $color: $color-main) {
@@ -90,7 +82,6 @@
   &--active {
     display: block;
 
-    .quote,
     p {
       animation: slideUpText 0.5s ease forwards;
     }

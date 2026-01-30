@@ -7,7 +7,7 @@
   background: rgba($color-main, 0.02);
   animation: fadeIn 1s ease-out;
   @include m {
-    padding: $sp-4xl 0 $sp-2xl;
+    padding: $sp-3xl 0 $sp-2xl;
   }
 
   &::before {
@@ -19,15 +19,6 @@
   .container {
     position: relative;
     z-index: 1;
-  }
-
-  .label {
-    margin-bottom: $sp-lg;
-    color: rgba($color-main, 0.5);
-    animation: slideUp 0.8s ease-out 0.2s backwards;
-    @include m {
-      margin-bottom: $sp-md;
-    }
   }
 
   h1 {

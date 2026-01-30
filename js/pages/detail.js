@@ -1,3 +1,9 @@
+const categoryLabels = {
+  residential: "주거 공간",
+  commercial: "상업 공간",
+  spatial: "공간 디자인",
+};
+
 async function loadProjectDetail() {
   const urlParams = new URLSearchParams(window.location.search);
   const projectId = urlParams.get("project");
@@ -27,9 +33,12 @@ async function loadProjectDetail() {
     const yearEl = document.getElementById("project-year");
     const philosophyEl = document.getElementById("project-philosophy");
 
+    const categorySlug = projectData.category.toLowerCase();
+    const categoryLabel = categoryLabels[categorySlug] || projectData.category;
+
     if (titleEl) titleEl.textContent = projectData.title;
     if (locationEl) locationEl.textContent = projectData.location;
-    if (categoryEl) categoryEl.textContent = projectData.category;
+    if (categoryEl) categoryEl.textContent = categoryLabel;
     if (yearEl) yearEl.textContent = projectData.year;
     if (philosophyEl) philosophyEl.textContent = projectData.philosophy;
 

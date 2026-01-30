@@ -1,3 +1,9 @@
+const categoryLabels = {
+  residential: "주거 공간",
+  commercial: "상업 공간",
+  spatial: "공간 디자인",
+};
+
 async function fetchProjectsData() {
   try {
     const response = await fetch("data/projects.json");
@@ -11,6 +17,7 @@ async function fetchProjectsData() {
 
 function buildProjectItem(projectId, projectData) {
   const categorySlug = projectData.category.toLowerCase();
+  const categoryLabel = categoryLabels[categorySlug] || projectData.category;
   return `
     <article class="product__item" data-category="${categorySlug}">
       <a href="detail.html?project=${projectId}">
@@ -21,7 +28,7 @@ function buildProjectItem(projectId, projectData) {
           <h3>${projectData.title}</h3>
           <div class="product__meta">
             <span class="product__meta-line"></span>
-            <p>${projectData.category} / ${projectData.year}</p>
+            <p>${categoryLabel} / ${projectData.year}</p>
           </div>
           <p class="product__summary">${projectData.summary}</p>
           <p class="product__story">${projectData.story}</p>
