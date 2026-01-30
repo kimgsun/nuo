@@ -35,19 +35,18 @@ BEM, 속성 순서, SCSS, HTML 적용 규칙 — 요약 정리.
 
 ## SCSS 변수·Mixin
 
-### 변수 (`_variables.scss`에만 정의)
+### 변수 (`_vars.scss`에만 정의)
 
-- **컬러**: `$color-main`, `$color-sub`, `$white`, `$black`, `$color-border`, `$color-bg-light`, `$color-error`
-- **타이포**: `$font-base`, `$fs-xs` ~ `$fs-5xl`
-- **간격·브레이크**: `$sp-xs` ~ `$sp-5xl`, `$small-mobile`, `$mobile`, `$tablet`, `$laptop`, `$inner-width`
+- **컬러**: `$clr-main`, `$clr-sub`, `$white`, `$black`, `$clr-border`, `$clr-bg-light`, `$clr-error`
+- **타이포**: `$font-base`, `$fs-body`, `$fs-display`, `$fs-title-lg`, `$fs-caption`, `$fs-small`, `$fs-lead`, `$fs-title-sm`, `$fs-title`, `$fs-display-sm`, `$fs-tiny`
+- **간격·브레이크**: `$sp-xs` ~ `$sp-5xl`, `$bp-mobile-sm`, `$bp-mobile`, `$bp-tablet`, `$bp-laptop`, `$inner-width`
 - **트랜지션**: `$trans`(0.3s ease), `$trans-slow`(1.2s cubic-bezier)
 - **원칙**: 재사용 가능한 값은 변수 정의. 단 1곳 사용 특수값은 직접 기입 허용
 
 ### Mixin (반응형 5단계)
 
-- **미디어 쿼리**: `@include small-m`(<480), `@include m`(<768), `@include t`(<1024), `@include l`(<1280). 1280~ = Desktop(기본). max-width 기준 Desktop First
+- **미디어 쿼리**: `@include small-m`(<480), `@include m`(<768), `@include t`(<1024), `@include l`(<1280). 1280~ = Desktop(기본). max-width 기준 Desktop First. 5단계: Small Mobile·Mobile·Tablet·Laptop·Desktop(1280~)
 - **호버**: `@include hover { ... }` — `@media (hover: hover)` 대신 사용
-- **레이아웃**: `flex-center`, `flex-between`
 - **도메인**: `section-padding`, `section-header`, `img-grayscale`, `hover`, `bg-overlay`, `tab-panel`, `tab-panel-item`, `grid-bg`, `grid-bg-white`
 - **애니메이션**: 공통 키프레임 `fadeIn`, `slideUp`(\_mixins.scss)
 - **기준**: 두 번 이상 쓰는 패턴만 Mixin으로 분리
@@ -55,17 +54,18 @@ BEM, 속성 순서, SCSS, HTML 적용 규칙 — 요약 정리.
 ## 모듈화 구조
 
 ```
-scss/
-├── abstracts/   → 전역 변수, Mixin, 리셋
-├── layout/      → 공통 헤더·푸터
-├── components/  → 버튼, 공통 UI
-├── pages/       → 페이지별 스타일 (_home, _about, _product, _detail, _contact, _faq)
-└── main.scss
+src/
+└── scss/
+     ├── abstracts/   → 전역 변수, Mixin, 리셋
+     ├── layout/      → 공통 헤더·푸터
+     ├── components/  → 버튼, 공통 UI
+     ├── pages/       → 페이지별 스타일 (_index, _about, _product, _detail, _contact, _faq)
+     └── main.scss
 ```
 
 ## HTML
 
 - **구조**: `header`, `main`, `section`, `article`, `footer`, `nav` 시맨틱 태그 우선
-- **래퍼**: `div.wrapper`, `div.inner` 사용 금지. 넓이 제한은 `.container`(max-width: $inner-width)만 사용
+- **래퍼**: `div.wrapper`, `div.inner` 사용 금지. 넓이 제한은 `.container`(max-width: $inner-width)만 사용. 섹션 라벨·인용은 `.section-label`, `.section-quote` 사용
 - **클래스·id·data**: **kebab-case**(소문자+하이픈) 통일. 예: `hero__grid`, `philosophy-content-nuovo`, `data-category="all"`
 - **애니메이션**: `data-scroll-animate`(타입), `data-scroll-delay`(ms) 속성으로 제어. 타입: fade-up/down/left/right, zoom-in/out, fade

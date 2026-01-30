@@ -100,7 +100,7 @@ Nuovo는 익숙한 일상을 새 시선으로 보는 감각, Nude는 재료 본�
 ### 콘텐츠·데이터 범위
 
 - **카테고리**: 웹에 노출되는 프로젝트 분류는 주거 공간 / 상업 공간 / 공간 디자인 3종.
-- **샘플 데이터**: `data/projects.json` 기준 5개 프로젝트(Shadow Studio, Horizon Residence, Monolith Corporate, Lattice Gallery, The Void House). 상세·필터·다음 프로젝트 링크는 이 데이터를 기준으로 동적 렌더링.
+- **샘플 데이터**: 프로젝트 데이터(JSON) 기준으로 상세·필터·다음 프로젝트 링크 등 동적 렌더링.
 
 ## Tech & Implementation
 
@@ -138,22 +138,23 @@ nuo/
 │   ├── brand-guide.md
 │   ├── coding-conventions.md
 │   └── accessibility-report.md
-├── css/
-│   └── main.css
-├── scss/
-│   ├── abstracts/   (_variables, _mixins, _reset)
-│   ├── layout/      (_header, _footer)
-│   ├── components/  (_common, _buttons)
-│   ├── pages/       (_home, _about, _product, _detail, _contact, _faq)
-│   └── main.scss
-├── js/
-│   ├── common.js
-│   ├── pages/       (product, detail, contact, faq)
-│   └── utils/       (form-validator.js)
-├── data/
-│   └── projects.json
-└── image/
-    └── favicon.png
+└── src/
+    ├── css/
+    │   └── main.css
+    ├── scss/
+    │   ├── abstracts/   (_vars, _mixins, _reset)
+    │   ├── layout/      (_header, _footer)
+    │   ├── components/  (_common, _buttons)
+    │   ├── pages/       (_index, _about, _product, _detail, _contact, _faq)
+    │   └── main.scss
+    ├── js/
+    │   ├── common.js
+    │   ├── pages/       (product, detail, contact, faq)
+    │   └── utils/       (form-validator.js)
+    ├── data/
+    │   └── projects.json
+    └── image/
+        └── favicon.png
 ```
 
 ## Outcome
