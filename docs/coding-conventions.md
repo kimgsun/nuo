@@ -45,7 +45,7 @@ BEM, 속성 순서, SCSS, HTML 적용 규칙 — 요약 정리.
 
 ### Mixin (반응형 5단계)
 
-- **미디어 쿼리**: `@include small-m`(<480), `@include m`(≤767), `@include t`(≤1023), `@include l`(≤1279). 1280~ = Desktop(기본). max-width 기준 Desktop First
+- **미디어 쿼리**: `@include small-m`(<480), `@include m`(<768), `@include t`(<1024), `@include l`(<1280). 1280~ = Desktop(기본). max-width 기준 Desktop First
 - **호버**: `@include hover { ... }` — `@media (hover: hover)` 대신 사용
 - **레이아웃**: `flex-center`, `flex-between`
 - **도메인**: `section-padding`, `section-header`, `img-grayscale`, `hover`, `bg-overlay`, `tab-panel`, `tab-panel-item`, `grid-bg`, `grid-bg-white`

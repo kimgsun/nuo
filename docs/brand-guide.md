@@ -107,7 +107,7 @@ Nuovo는 익숙한 일상을 새 시선으로 보는 감각, Nude는 재료 본�
 ### HTML / SCSS / JS 방향
 
 - **HTML**: 시맨틱 태그 우선, 불필요한 래퍼 div 지양, alt·aria-label·aria-expanded 등 접근성 필수.
-- **SCSS**: abstracts / layout / components / pages 모듈화, BEM 간소화(visual\_\_box 수준), 변수·Mixin으로 중복 최소화, 미디어 쿼리 단축(@include t/m/d), 속성 순서(레이아웃 → 박스모델 → 시각효과 → 기타).
+- **SCSS**: abstracts / layout / components / pages 모듈화, BEM 간소화(visual\_\_box 수준), 변수·Mixin으로 중복 최소화, 미디어 쿼리 단축(@include small-m, m, t, l), 속성 순서(레이아웃 → 박스모델 → 시각효과 → 기타).
 - **JS**: ES6, Vanilla 중심. 스크롤 애니메이션만 jQuery, FAQ 아코디언·폼 검증(FormValidator) 등은 Vanilla, 페이지별 모듈 분리.
 
 ### 퍼블리싱 포인트

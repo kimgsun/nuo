@@ -27,7 +27,7 @@
 - 🔍 **프로젝트 필터링** - 카테고리별 동적 필터링 및 페이드 애니메이션
 - 📝 **실시간 폼 검증** - 이메일/전화번호 자동 포맷, 에러는 alert로 표시
 - 🖼️ **동적 프로젝트 렌더링** - JSON 기반 데이터 구조
-- 📱 **완전 반응형** - Desktop First, @include m/t/d mixin 사용
+- 📱 **완전 반응형** - Desktop First, @include small-m, m, t, l
 - ♿ **웹 접근성** - ARIA 속성, 시맨틱 마크업 준수
 
 <br/>
@@ -200,9 +200,9 @@ $fs-2xs: 0.6rem;   // Caption 소
 
 ```scss
 $small-mobile: 480px; // @include small-m (<480)
-$mobile: 768px; // @include m (≤767)
-$tablet: 1024px; // @include t (≤1023)
-$laptop: 1280px; // @include l (≤1279). 1280~ = Desktop(기본)
+$mobile: 768px; // @include m (<768)
+$tablet: 1024px; // @include t (<1024)
+$laptop: 1280px; // @include l (<1280). 1280~ = Desktop(기본)
 ```
 
 <br/>
