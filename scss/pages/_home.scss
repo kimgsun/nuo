@@ -4,7 +4,7 @@
   align-items: center;
   min-height: calc(100vh - 70px);
   overflow: hidden;
-  animation: heroFadeIn 1.2s ease-out;
+  animation: fadeIn 1.2s ease-out;
   @include t {
     min-height: auto;
     padding: $sp-5xl 0;
@@ -89,11 +89,8 @@
       object-fit: cover;
       @include img-grayscale;
       transition: 1s cubic-bezier(0.2, 1, 0.3, 1);
-
-      @media (hover: hover) {
-        &:hover {
-          transform: scale(1.05);
-        }
+      @include hover {
+        transform: scale(1.05);
       }
     }
   }
@@ -221,15 +218,6 @@
 
   .gallery {
     gap: $sp-2xl;
-  }
-}
-
-@keyframes heroFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }
 

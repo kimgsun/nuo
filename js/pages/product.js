@@ -1,11 +1,11 @@
 async function fetchProjectsData() {
   try {
-    const response = await fetch('data/projects.json');
-    if (!response.ok) throw new Error('프로젝트 데이터를 불러올 수 없습니다');
+    const response = await fetch("data/projects.json");
+    if (!response.ok) throw new Error("프로젝트 데이터를 불러올 수 없습니다");
     return await response.json();
   } catch (error) {
-    console.error('프로젝트 로드 실패:', error);
-    return {};
+    alert("프로젝트 데이터를 불러올 수 없습니다.");
+    return null;
   }
 }
 
@@ -35,50 +35,48 @@ function renderProjectGrid(projects, gridElement) {
   if (!gridElement) return;
   gridElement.innerHTML = Object.entries(projects)
     .map(([id, data]) => buildProjectItem(id, data))
-    .join('');
+    .join("");
 }
 
 function setupCategoryFilter(gridElement, allProjects) {
-  const filterButtons = document.querySelectorAll('.product__filter-btn');
-  
-  filterButtons.forEach(button => {
-    button.addEventListener('click', function() {
+  const filterButtons = document.querySelectorAll(".product__filter-btn");
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", function () {
       const selectedCategory = this.dataset.category;
-      
-      filterButtons.forEach(btn => btn.classList.remove('product__filter-btn--active'));
-      this.classList.add('product__filter-btn--active');
-      
-      gridElement.style.opacity = '0';
-      gridElement.style.transform = 'translateY(20px)';
-      
+      filterButtons.forEach((btn) =>
+        btn.classList.remove("product__filter-btn--active"),
+      );
+      this.classList.add("product__filter-btn--active");
+
+      gridElement.classList.add("product__grid--filtering");
       setTimeout(() => {
-        const filteredProjects = selectedCategory === 'all' 
-          ? allProjects 
-          : Object.fromEntries(
-              Object.entries(allProjects).filter(([_, projectData]) => 
-                projectData.category.toLowerCase() === selectedCategory
-              )
-            );
-        
+        const filteredProjects =
+          selectedCategory === "all"
+            ? allProjects
+            : Object.fromEntries(
+                Object.entries(allProjects).filter(
+                  ([_, projectData]) =>
+                    projectData.category.toLowerCase() === selectedCategory,
+                ),
+              );
         renderProjectGrid(filteredProjects, gridElement);
-        setTimeout(() => {
-          gridElement.style.opacity = '1';
-          gridElement.style.transform = 'translateY(0)';
-        }, 10);
+        gridElement.classList.remove("product__grid--filtering");
       }, 300);
     });
   });
 }
 
-(async function() {
-  const projectGrid = document.getElementById('productGrid');
+(async function () {
+  const projectGrid = document.getElementById("productGrid");
   if (!projectGrid) return;
-  
-  projectGrid.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+
   const projectsData = await fetchProjectsData();
+  if (!projectsData) return;
+
   renderProjectGrid(projectsData, projectGrid);
   setupCategoryFilter(projectGrid, projectsData);
-  
+
   if (window.refreshScrollAnimations) {
     setTimeout(() => {
       window.refreshScrollAnimations();

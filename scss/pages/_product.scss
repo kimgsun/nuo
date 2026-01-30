@@ -5,7 +5,7 @@
   border-top: 1px solid $color-border;
   text-align: center;
   background: rgba($color-main, 0.02);
-  animation: productHeroFadeIn 1s ease-out;
+  animation: fadeIn 1s ease-out;
   @include t {
     padding: $sp-4xl 0 $sp-2xl;
   }
@@ -24,7 +24,7 @@
   .label {
     margin-bottom: $sp-lg;
     color: rgba($color-main, 0.5);
-    animation: productHeroContentSlide 0.8s ease-out 0.2s backwards;
+    animation: slideUp 0.8s ease-out 0.2s backwards;
     @include t {
       margin-bottom: $sp-md;
     }
@@ -34,7 +34,7 @@
     margin-bottom: $sp-xl;
     line-height: 1.2;
     color: $color-main;
-    animation: productHeroContentSlide 0.8s ease-out 0.3s backwards;
+    animation: slideUp 0.8s ease-out 0.3s backwards;
     @include t {
       margin-bottom: $sp-lg;
     }
@@ -45,7 +45,7 @@
     font-size: $fs-lg;
     line-height: 1.85;
     color: rgba($color-main, 0.7);
-    animation: productHeroContentSlide 0.8s ease-out 0.4s backwards;
+    animation: slideUp 0.8s ease-out 0.4s backwards;
     @include t {
       font-size: $fs-base;
     }
@@ -132,6 +132,14 @@
     grid-template-columns: repeat(12, 1fr);
     gap: 40px;
     row-gap: 120px;
+    transition:
+      opacity 0.8s ease,
+      transform 0.8s ease;
+
+    &.product__grid--filtering {
+      opacity: 0;
+      transform: translateY(20px);
+    }
     @include t {
       gap: $sp-lg;
       row-gap: 80px;
@@ -187,37 +195,36 @@
       display: block;
       width: 100%;
       height: auto;
+      border: none;
       filter: grayscale(100%);
       transition:
         transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
         filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    @media (hover: hover) {
-      &:hover {
-        transform: translateY(-4px);
+    @include hover {
+      transform: translateY(-4px);
 
-        figure {
-          box-shadow: 0 12px 40px rgba($color-main, 0.15);
-        }
+      figure {
+        box-shadow: 0 12px 40px rgba($color-main, 0.15);
+      }
 
-        img {
-          transform: scale(1.03);
-          filter: grayscale(0%);
-        }
+      img {
+        transform: scale(1.03);
+        filter: grayscale(0%);
+      }
 
-        .product__meta-line {
-          width: 50px;
-          background: rgba($color-main, 0.6);
-        }
+      .product__meta-line {
+        width: 50px;
+        background: rgba($color-main, 0.6);
+      }
 
-        h3 {
-          color: $color-main;
-        }
+      h3 {
+        color: $color-main;
+      }
 
-        .product__summary {
-          color: $color-main;
-        }
+      .product__summary {
+        color: $color-main;
       }
     }
   }
@@ -243,7 +250,7 @@
       color: rgba($color-main, 0.5);
       text-transform: uppercase;
       @include t {
-        font-size: 0.6rem;
+        font-size: $fs-2xs;
       }
     }
   }
@@ -272,58 +279,5 @@
     font-size: $fs-sm;
     line-height: 1.6;
     color: rgba($color-main, 0.5);
-  }
-
-  &__item {
-    transition:
-      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-      box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-
-    &:nth-child(3n + 1) {
-      grid-column: 1 / span 7;
-    }
-    &:nth-child(3n + 2) {
-      grid-column: 8 / span 5;
-      margin-top: 200px;
-      @include d {
-        margin-top: 100px;
-      }
-      @include t {
-        margin-top: 0;
-      }
-    }
-    &:nth-child(3n) {
-      grid-column: 3 / span 8;
-      margin-top: 50px;
-      @include t {
-        margin-top: 0;
-      }
-    }
-    @include m {
-      &:nth-child(n) {
-        grid-column: 1;
-        margin-top: 0;
-      }
-    }
-  }
-}
-
-@keyframes productHeroFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes productHeroContentSlide {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }

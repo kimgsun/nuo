@@ -1,18 +1,24 @@
-* { 
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html { 
-  font-size: 16px; 
-  scroll-behavior: smooth; 
-  -webkit-font-smoothing: antialiased; 
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
 }
 
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: $white; }
-::-webkit-scrollbar-thumb { background: $color-main; }
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: $white;
+}
+::-webkit-scrollbar-thumb {
+  background: $color-main;
+}
 
 body {
   display: flex;
@@ -24,11 +30,22 @@ body {
   line-height: 1.7;
   color: $color-main;
   background: $white;
+
+  &.is-menu-open {
+    overflow: hidden;
+  }
 }
 
-main { flex: 1; }
+main {
+  flex: 1;
+}
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 400;
   line-height: 1.3;
   color: $color-main;
@@ -37,37 +54,46 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: $fs-5xl;
   font-weight: 800;
-  @include t { font-size: $fs-3xl; }
+  @include t {
+    font-size: $fs-3xl;
+  }
 }
 
 h2 {
   font-size: $fs-3xl;
   font-weight: 700;
-  @include t { font-size: $fs-2xl; }
+  @include t {
+    font-size: $fs-2xl;
+  }
 }
 
 h3 {
   font-size: $fs-xl;
   font-weight: 700;
-  @include t { font-size: $fs-lg; }
+  @include t {
+    font-size: $fs-lg;
+  }
 }
-a { 
+a {
   color: inherit;
   text-decoration: none;
-  transition: $trans; 
+  transition: $trans;
 }
-img { 
+img {
   display: block;
-  max-width: 100%; 
+  max-width: 100%;
 }
-button { 
+button {
   border: none;
   background: none;
   font: inherit;
-  cursor: pointer; 
+  cursor: pointer;
 }
-ul, ol { list-style: none; }
-:focus-visible { 
+ul,
+ol {
+  list-style: none;
+}
+:focus-visible {
   outline: 2px solid $color-main;
-  outline-offset: 2px; 
+  outline-offset: 2px;
 }

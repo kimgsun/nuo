@@ -4,7 +4,7 @@
   overflow: hidden;
   border-top: 1px solid $color-border;
   background: rgba($color-main, 0.03);
-  animation: projectHeroFadeIn 1s ease-out;
+  animation: fadeIn 1s ease-out;
   @include t {
     padding: $sp-3xl 0;
   }
@@ -22,7 +22,7 @@
   h1 {
     margin-bottom: $sp-3xl;
     line-height: 1.1;
-    animation: projectHeroTitleSlide 0.8s ease-out 0.2s backwards;
+    animation: slideUp 0.8s ease-out 0.2s backwards;
     @include t {
       margin-bottom: $sp-xl;
     }
@@ -207,26 +207,6 @@
         width: 100%;
       }
     }
-  }
-}
-
-@keyframes projectHeroFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes projectHeroTitleSlide {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 

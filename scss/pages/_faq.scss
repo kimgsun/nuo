@@ -3,7 +3,7 @@
   padding: $sp-5xl 0 $sp-4xl;
   overflow: hidden;
   border-top: 1px solid $color-border;
-  animation: faqHeroFadeIn 1s ease-out;
+  animation: fadeIn 1s ease-out;
   @include t {
     padding: $sp-3xl 0;
   }
@@ -22,7 +22,7 @@
   h1 {
     margin-bottom: $sp-lg;
     color: $color-main;
-    animation: faqHeroTitleSlide 0.8s ease-out 0.2s backwards;
+    animation: slideUp 0.8s ease-out 0.2s backwards;
     @include t {
       margin-bottom: $sp-md;
     }
@@ -105,7 +105,7 @@
       font-size: $fs-base;
     }
     @include m {
-      padding: 0.5rem 2rem;
+      padding: $sp-sm $sp-xl;
     }
 
     span:not(.faq__label):not(.faq__icon) {
@@ -234,26 +234,6 @@
         }
       }
     }
-  }
-}
-
-@keyframes faqHeroFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes faqHeroTitleSlide {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 

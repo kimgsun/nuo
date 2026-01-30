@@ -1,57 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="nuo의 프로젝트 아카이브 - 주거, 상업, 공간 디자인">
-  <link rel="icon" type="image/png" href="image/favicon.png">
-  <title>Product | nuo</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
-  <link rel="stylesheet" href="css/main.css">
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="js/common.js" defer></script>
-  <script src="js/utils/scroll-animation.js"></script>
-  <script type="module" src="js/pages/product.js"></script>
-</head>
-<body>
-  <header class="header">
-    <a href="index.html" class="header__logo" aria-label="nuo 홈으로 이동">nuo</a>
-    <button class="header__toggle" aria-label="메뉴 열기" aria-expanded="false"></button>
-    <nav class="header__nav" aria-label="주요 메뉴">
-      <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="product.html" class="active" aria-current="page">Product</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="product" />
+    <link rel="icon" type="image/png" href="image/favicon.png" />
+    <title>Product | nuo</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="index.html" class="header__logo" aria-label="nuo 홈으로 이동"
+        >nuo</a
+      >
+      <button
+        class="header__toggle"
+        aria-label="메뉴 열기"
+        aria-expanded="false"
+      ></button>
+      <nav class="header__nav" aria-label="주요 메뉴">
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li>
+            <a href="product.html" class="active" aria-current="page"
+              >Product</a
+            >
+          </li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <main>
-    <section class="product-hero">
-      <div class="container">
-        <span class="common-label">Selected Works</span>
-        <h1>Selected Projects</h1>
-        <p>nuo가 정의하는 공간의 가치, 선과 면의 조화를 통해 완성된 프로젝트 아카이브입니다.</p>
-      </div>
-    </section>
-    <section class="product">
-      <div class="container">
-        <div class="product__filter" role="navigation" aria-label="프로젝트 필터">
-          <button class="product__filter-btn product__filter-btn--active" data-category="all" aria-pressed="true">전체</button>
-          <button class="product__filter-btn" data-category="residential" aria-pressed="false">주거 공간</button>
-          <button class="product__filter-btn" data-category="commercial" aria-pressed="false">상업 공간</button>
-          <button class="product__filter-btn" data-category="spatial" aria-pressed="false">공간 디자인</button>
+    <main>
+      <section class="product-hero">
+        <div class="container">
+          <span class="common-label">Selected Works</span>
+          <h1>Selected Projects</h1>
+          <p>
+            nuo가 정의하는 공간의 가치, 선과 면의 조화를 통해 완성된 프로젝트
+            아카이브입니다.
+          </p>
         </div>
-        <div class="product__grid" id="productGrid" data-scroll-animate="fade-up" data-scroll-delay="100"></div>
-      </div>
-    </section>
-  </main>
+      </section>
+      <section class="product">
+        <div class="container">
+          <div
+            class="product__filter"
+            role="navigation"
+            aria-label="프로젝트 필터"
+          >
+            <button
+              class="product__filter-btn product__filter-btn--active"
+              data-category="all"
+              aria-pressed="true"
+            >
+              전체
+            </button>
+            <button
+              class="product__filter-btn"
+              data-category="residential"
+              aria-pressed="false"
+            >
+              주거 공간
+            </button>
+            <button
+              class="product__filter-btn"
+              data-category="commercial"
+              aria-pressed="false"
+            >
+              상업 공간
+            </button>
+            <button
+              class="product__filter-btn"
+              data-category="spatial"
+              aria-pressed="false"
+            >
+              공간 디자인
+            </button>
+          </div>
+          <div
+            class="product__grid"
+            id="productGrid"
+            data-scroll-animate="fade-up"
+            data-scroll-delay="100"
+          ></div>
+        </div>
+      </section>
+    </main>
 
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 nuo Studio. All rights reserved.</p>
-    </div>
-  </footer>
-</body>
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2026 nuo Studio. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/common.js"></script>
+    <script type="module" src="js/pages/product.js"></script>
+  </body>
 </html>

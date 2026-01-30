@@ -11,12 +11,13 @@
   backdrop-filter: blur(20px);
   box-shadow: 0 1px 20px rgba($color-main, 0.08);
   transition: $trans;
-  @include t { box-shadow: 0 1px 20px rgba($color-main, 0.08); }
 
   &__logo,
   &__toggle {
     transition: $trans;
-    &:hover { color: rgba($color-main, 0.3); }
+    &:hover {
+      color: rgba($color-main, 0.3);
+    }
   }
 
   &__logo {
@@ -35,10 +36,16 @@
     padding: $sp-xs;
     font-size: $fs-2xl;
     color: $color-main;
-    @include t { display: flex; }
+    @include t {
+      display: flex;
+    }
 
-    &::before { content: '☰'; }
-    &--active::before { content: '✕'; }
+    &::before {
+      content: "☰";
+    }
+    &--active::before {
+      content: "✕";
+    }
   }
 
   &__nav {
@@ -55,15 +62,19 @@
       transition: transform $trans;
     }
 
-    &--open { @include t { transform: translateY(0); } }
+    &--open {
+      @include t {
+        transform: translateY(0);
+      }
+    }
 
     ul {
       display: flex;
       gap: $sp-xl;
-      @include t { 
+      @include t {
         flex-direction: column;
         width: 100%;
-        gap: 0; 
+        gap: 0;
       }
     }
 
@@ -92,14 +103,20 @@
         transform-origin: left;
         background: $color-main;
         transition: $trans;
-        @include t { display: none; }
+        @include t {
+          display: none;
+        }
       }
 
       &:hover,
       &.active {
         color: $color-main;
-        &::after { transform: scaleX(1); }
-        @include t { background: rgba($white, 0.8); }
+        &::after {
+          transform: scaleX(1);
+        }
+        @include t {
+          background: rgba($white, 0.8);
+        }
       }
     }
   }
