@@ -310,7 +310,7 @@ $bp-laptop: 1280px; // @include l (<1280). 1280+ = Desktop(기본)
 
 <div align="center">
 
-Planning · Design · Publishing (Portfolio)
+**Planning · Design · Publishing** (Portfolio)
 
 Built with HTML5, SCSS, JavaScript
 
