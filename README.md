@@ -2,9 +2,9 @@
 
 # nuo
 
-### Spatial Design Studio Website · **Portfolio Project**
+### Spatial Design Studio Website
 
-**정제된 형태와 섬세한 감각이 만나는 공간 디자인 스튜디오**
+공간 디자인 스튜디오 컨셉의 웹사이트
 
 [Brand Guide](./docs/brand-guide.md) · [Live View](https://kimgsun.github.io/nuo/)
 
@@ -12,48 +12,42 @@
 
 ---
 
-## 📌 프로젝트 소개
+## 프로젝트 소개
 
-건축/인테리어 브랜드 **nuo** 컨셉의 웹사이트 **포트폴리오 프로젝트**입니다. 기획 100%, 디자인 100%, 퍼블리싱 100% (1인 작업).
+건축/인테리어 브랜드 **nuo** 컨셉의 웹사이트 포트폴리오입니다. 기획·디자인·퍼블리싱을 1인으로 진행했습니다.
 
-공간을 이루는 전체적인 균형부터 피부에 닿는 소재의 질감까지, 머무는 모든 순간이 하나의 완성된 기억이 되도록 설계하는 nuo의 철학을 모노크롬 미학과 시맨틱 마크업으로 구현했습니다.
+모노크롬 톤과 시맨틱 마크업을 중심으로 구성했습니다.
 
-<br/>
+  
 
-## ✨ 주요 기능
 
-- 🎨 **모노크롬 인터랙션** - 그레이스케일 기본, 호버 시 컬러 전환
-- ✨ **스크롤 애니메이션** - jQuery 기반 fade-up, fade-left, fade-right, zoom-in 애니메이션
-- 🔍 **프로젝트 필터링** - 카테고리별 동적 필터링 및 페이드 애니메이션
-- 📝 **실시간 폼 검증** - 이메일/전화번호 자동 포맷, 에러는 alert로 표시
-- 🖼️ **동적 프로젝트 렌더링** - JSON 기반 데이터 구조
-- 📱 **완전 반응형** - Desktop First, @include small-m, m, t, l
-- ♿ **웹 접근성** - ARIA 속성, 시맨틱 마크업 준수
+## 주요 기능
 
-<br/>
+- **모노크롬 인터랙션** - 그레이스케일 기본, 호버 시 컬러 전환
+- **스크롤 애니메이션** - jQuery 기반 fade-up, fade-left, fade-right, zoom-in 애니메이션
+- **프로젝트 필터링** - 카테고리별 동적 필터링 및 페이드 애니메이션
+- **실시간 폼 검증** - 이메일/전화번호 자동 포맷, 에러는 alert로 표시
+- **동적 프로젝트 렌더링** - JSON 기반 데이터 구조
+- **반응형** - Desktop First, @include small-m, m, t, l
+- **웹 접근성** - ARIA 속성, 시맨틱 마크업
 
-## 🛠️ 기술 스택
+  
+
+
+## 기술 스택
 
 ### Frontend
 
-<div>
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
-  <img src="https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white" alt="SCSS"/>
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
-  <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery"/>
-</div>
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)![SCSS](https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white)![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
 
 ### Design & Tools
 
-<div>
-  <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma"/>
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git"/>
-  <img src="https://img.shields.io/badge/GitHub_Pages-222222?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Pages"/>
-</div>
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-222222?style=for-the-badge&logo=github&logoColor=white)
 
-<br/>
+  
 
-## 📂 프로젝트 구조
+
+## 프로젝트 구조
 
 ```
 nuo/
@@ -93,21 +87,25 @@ nuo/
         └── favicon.png            # 파비콘
 ```
 
-<br/>
+  
 
-## 📐 퍼블리싱 포인트
 
-| 항목             | 내용                                                                                                                                        |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Responsive**   | 반응형 5단계: Small Mobile(<480)·Mobile(480~767)·Tablet(768~1023)·Laptop(1024~1279)·Desktop(1280~) @include small-m, m, t, l                |
-| **Key Function** | JSON 기반 프로젝트 필터·동적 상세 렌더링, FormValidator 실시간 폼 검증, Philosophy 탭 aria-selected·slideUpText, 이미지 grayscale 호버 전환 |
-| **Web Standard** | 시맨틱 태그, ARIA·alt 필수, Chrome/Firefox/Safari/Edge 최신 버전 대상                                                                       |
+## 퍼블리싱 포인트
 
-<br/>
 
-## 🎯 핵심 기능 상세
+| 항목               | 내용                                                                                                                      |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| **Responsive**   | 반응형 5단계: Small Mobile(<480)·Mobile(480~767)·Tablet(768~1023)·Laptop(1024~1279)·Desktop(1280~) @include small-m, m, t, l |
+| **Key Function** | JSON 기반 프로젝트 필터·동적 상세 렌더링, FormValidator 실시간 폼 검증, Philosophy 탭 aria-selected·slideUpText, 이미지 grayscale 호버 전환          |
+| **Web Standard** | 시맨틱 태그, ARIA·alt 필수, Chrome/Firefox/Safari/Edge 최신 버전 대상                                                                |
 
-### 1️⃣ 프로젝트 필터링 (product.html)
+
+  
+
+
+## 핵심 기능 상세
+
+### 1. 프로젝트 필터링 (product.html)
 
 ```javascript
 // 카테고리별 동적 필터링
@@ -116,7 +114,7 @@ nuo/
 - JSON 데이터 기반 렌더링
 ```
 
-### 2️⃣ 이미지 인터랙션
+### 2. 이미지 인터랙션
 
 ```scss
 // @include hover 사용 (hover: hover 미디어 쿼리 통일)
@@ -126,7 +124,7 @@ nuo/
 }
 ```
 
-### 3️⃣ 폼 검증 시스템 (contact.html)
+### 3. 폼 검증 시스템 (contact.html)
 
 ```javascript
 // FormValidator 클래스
@@ -134,7 +132,7 @@ nuo/
 - 실시간 에러 클래스 표시, 제출 시 검증 실패·성공 메시지는 alert
 ```
 
-### 4️⃣ 탭 전환 (about.html, index.html)
+### 4. 탭 전환 (about.html, index.html)
 
 ```javascript
 // common.js - Philosophy 탭 (Nuovo/Nude)
@@ -144,7 +142,7 @@ nuo/
 - CSS 애니메이션 (slideUpText)
 ```
 
-### 5️⃣ 스크롤 애니메이션 (common.js)
+### 5. 스크롤 애니메이션 (common.js)
 
 ```javascript
 // jQuery 기반 스크롤 감지
@@ -158,9 +156,10 @@ nuo/
 </section>
 ```
 
-<br/>
+  
 
-## 🎨 디자인 시스템
+
+## 디자인 시스템
 
 ### 컬러 팔레트
 
@@ -199,9 +198,10 @@ $bp-tablet: 1024px; // @include t (<1024)
 $bp-laptop: 1280px; // @include l (<1280). 1280~ = Desktop(기본)
 ```
 
-<br/>
+  
 
-## 📊 프로젝트 데이터 구조
+
+## 프로젝트 데이터 구조
 
 `src/data/projects.json` 수정 예시:
 
@@ -233,9 +233,11 @@ $bp-laptop: 1280px; // @include l (<1280). 1280~ = Desktop(기본)
 }
 ```
 
-<br/>
+  
 
-## 📱 반응형 지원 (5단계)
+
+## 반응형 지원 (5단계)
+
 
 | Device       | Breakpoint      |
 | ------------ | --------------- |
@@ -245,17 +247,22 @@ $bp-laptop: 1280px; // @include l (<1280). 1280~ = Desktop(기본)
 | Laptop       | 1024px ~ 1279px |
 | Desktop      | 1280px ~        |
 
-<br/>
 
-## 🌐 브라우저 지원
+  
 
-|  Chrome   |  Firefox  |  Safari   |   Edge    |
-| :-------: | :-------: | :-------: | :-------: |
-| ✅ Latest | ✅ Latest | ✅ Latest | ✅ Latest |
 
-<br/>
+## 브라우저 지원
 
-## 📋 코딩 컨벤션
+
+| Chrome | Firefox | Safari | Edge   |
+| ------ | ------- | ------ | ------ |
+| Latest | Latest  | Latest | Latest |
+
+
+  
+
+
+## 코딩 컨벤션
 
 ### HTML
 
@@ -266,9 +273,9 @@ $bp-laptop: 1280px; // @include l (<1280). 1280~ = Desktop(기본)
 
 ### SCSS
 
-- BEM 1단계 depth 엄격 준수 (`블록__요소` 형태만)
+- BEM 1단계 depth 준수 (`블록__요소` 형태만)
 - 속성 순서: **레이아웃 → 박스모델 → 시각효과 → 기타**
-- `!important` 절대 금지, 명시도로만 제어
+- `!important` 사용하지 않고 명시도로 제어
 - Mixin: 2회 이상 사용 패턴만 정의
 - 재사용 가능한 값은 변수화, 특수값은 직접 기입 허용
 
@@ -278,20 +285,24 @@ $bp-laptop: 1280px; // @include l (<1280). 1280~ = Desktop(기본)
 - 간결한 변수명 (실무 중심)
 - 에러는 alert로만 표시
 
-<br/>
+  
 
-## 🔗 Live View / Repository
 
-| 구분           | 링크                           |
-| -------------- | ------------------------------ |
-| **Live View**  | https://kimgsun.github.io/nuo/ |
-| **Repository** | https://github.com/kimgsun/nuo |
+## Live View / Repository
 
-<br/>
 
-## 📄 라이선스
+| 구분             | 링크                                                               |
+| -------------- | ---------------------------------------------------------------- |
+| **Live View**  | [https://kimgsun.github.io/nuo/](https://kimgsun.github.io/nuo/) |
+| **Repository** | [https://github.com/kimgsun/nuo](https://github.com/kimgsun/nuo) |
 
-© 2026 **nuo Studio**. All rights reserved.
+
+  
+
+
+## 라이선스
+
+© **nuo Studio**. All rights reserved.
 
 ---
 
@@ -299,7 +310,7 @@ $bp-laptop: 1280px; // @include l (<1280). 1280~ = Desktop(기본)
 
 <div align="center">
 
-**Planning · Design · Publishing 100%** (Portfolio)
+Planning · Design · Publishing (Portfolio)
 
 Built with HTML5, SCSS, JavaScript
 
